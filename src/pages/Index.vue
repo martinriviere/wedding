@@ -17,6 +17,7 @@ export default Vue.extend({
 <style lang="scss">
 body {
   background-image: url("../assets/img/background.jpg");
+  background-size: cover;
 }
 </style>
 

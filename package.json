@@ -7,6 +7,8 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@types/countdown": "^0.0.7",
+    "countdown": "^2.6.0",
     "gridsome": "^0.7.0",
     "moment": "^2.27.0",
     "typeface-libre-baskerville": "^0.0.72"
