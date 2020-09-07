@@ -1,33 +1,47 @@
 <template>
-  <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
-  </Layout>
+  <div class="container">
+    <h1>MM</h1>
+    <CountDown />
+  </div>
 </template>
 
-<script>
-export default {
-  metaInfo: {
-    title: 'Hello, world!'
-  }
-}
+<script lang="ts">
+import Vue from "vue"
+import CountDown from "~/components/CountDown.vue"
+
+export default Vue.extend({
+  components: { CountDown },
+})
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
+<style lang="scss">
+body {
+  background-image: url("../assets/img/background.jpg");
+  background-size: cover;
+}
+</style>
+
+<style lang="scss" scoped>
+.container {
+  font-family: "Libre Baskerville", serif;
+  max-width: 800px;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  font-size: 100px;
+  color: #d4af37;
+}
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 50px;
+  }
 }
 </style>
