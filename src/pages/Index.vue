@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-fern bg-center bg-cover">
+  <div class="background bg-fern bg-cover">
     <div
       class="container h-screen mx-auto flex flex-col justify-center items-center"
     >
@@ -19,6 +19,9 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.background {
+  background-image: url('../assets/img/fern.png');
+}
 .container {
   font-family: "Libre Baskerville", serif;
 }
