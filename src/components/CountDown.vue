@@ -43,7 +43,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 h2 {
-  color: white;
+  color: #ddd;
   font-size: 35px;
   text-align: center;
   font-weight: 500;

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>MM</h1>
+    <g-image src="../assets/img/logo.png" id="logo" />
     <CountDown />
   </div>
 </template>
@@ -16,7 +16,7 @@ export default Vue.extend({
 
 <style lang="scss">
 body {
-  background-image: url("../assets/img/background.jpg");
+  background-image: url("../assets/img/background.png");
   background-size: cover;
 }
 </style>
@@ -37,11 +37,18 @@ h1 {
   font-variant: normal;
   font-weight: 500;
   font-size: 100px;
+  font-size: 100px;
   color: #d4af37;
+}
+#logo {
+  width: 500px;
 }
 @media screen and (max-width: 767px) {
   h1 {
     font-size: 50px;
+  }
+  #logo {
+    width: 200px;
   }
 }
 </style>
