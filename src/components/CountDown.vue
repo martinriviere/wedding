@@ -1,5 +1,5 @@
 <template>
-  <h2>{{ countdown }}</h2>
+  <h2 class="text-xl sm:text-4xl text-gray-400 font-normal">{{ countdown }}</h2>
 </template>
 
 <script lang="ts">
@@ -40,17 +40,3 @@ export default Vue.extend({
   },
 })
 </script>
-
-<style lang="scss" scoped>
-h2 {
-  color: #ddd;
-  font-size: 35px;
-  text-align: center;
-  font-weight: 500;
-}
-@media screen and (max-width: 767px) {
-  h2 {
-    font-size: 20px;
-  }
-}
-</style>
