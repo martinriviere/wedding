@@ -3,7 +3,7 @@
     <div
       class="container h-screen mx-auto flex flex-col justify-center items-center"
     >
-      <g-image src="../assets/img/logo.png" id="logo" class="mb-16" />
+      <g-image src="../assets/img/logo.png" id="logo" class="mb-16" width="500" />
       <CountDown />
     </div>
   </div>
@@ -20,7 +20,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .background {
-  background-image: url('../assets/img/fern.png');
+  background-image: url('../assets/img/fern.jpg');
 }
 .container {
   font-family: "Libre Baskerville", serif;
