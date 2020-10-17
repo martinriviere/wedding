@@ -1,5 +1,5 @@
 <template>
-  <h2 class="text-xl sm:text-4xl text-gray-400 font-normal">{{ countdown }}</h2>
+  <p>{{ countdown }}</p>
 </template>
 
 <script lang="ts">
