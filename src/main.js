@@ -1,11 +1,11 @@
 import "typeface-libre-baskerville"
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import { config, library } from "@fortawesome/fontawesome-svg-core"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 
 import DefaultLayout from "~/layouts/Default.vue"
-library.add(faBars)
+library.add(faBars, faTimes)
 
 config.autoAddCss = false
 
