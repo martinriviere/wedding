@@ -14,4 +14,4 @@ collections:
         file: "content/main.md"
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Texte, name: text, widget: markdown }
+          - { label: Text, name: body, widget: markdown }

@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <slot />
+  <div class="flex flex-grow bg-dark bg-opacity-75">
+    <div class="container mx-auto px-10">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -23,6 +25,4 @@ query {
 }
 </static-query>
 
-<style>
-
-</style>
+<style></style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="flex flex-col min-h-screen sm:bg-cover bg-left-top">
     <Header v-if="$route.path !== '/'" />
     <router-view />
   </div>
@@ -13,3 +13,9 @@ export default Vue.extend({
   components: { Header },
 })
 </script>
+
+<style lang="scss">
+#app {
+  background-image: url("assets/img/fern.jpg");
+}
+</style>
