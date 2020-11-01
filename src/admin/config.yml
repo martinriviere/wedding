@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: martinriviere/wedding
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Accueil"
+        name: "main"
+        file: "content/main.md"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Texte, name: text, widget: markdown }
