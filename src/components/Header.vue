@@ -1,23 +1,49 @@
 <template>
-  <g-image src="../assets/img/logo.png" id="logo" class="mb-16" />
+  <div>
+    <div
+      class="flex items-center justify-between w-full px-4 py-2 sm:px-10 sm:py-5 border-dark border-opacity-25 border-b-2 sm:border-b-0"
+    >
+      <g-image src="../assets/img/logo.png" id="logo" alt="Logo" width="150" />
+      <CountDown class="text-sm sm:text-xl text-dark text-center mx-5" />
+      <div
+        class="sm:hidden text-dark text-3xl"
+        @click="mobileNavBarVisible = true"
+      >
+        <FontAwesome :icon="['fas', 'bars']" />
+      </div>
+    </div>
+    <div
+      v-show="mobileNavBarVisible"
+      @click="mobileNavBarVisible = false"
+      class="w-screen h-screen bg-dark bg-opacity-75 absolute top-0 left-0"
+    />
+    <NavBar
+      :mobileVisible="mobileNavBarVisible"
+      @close="mobileNavBarVisible = false"
+    />
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue"
-import CountDown from "~/components/CountDown.vue"
+import CountDown from "./CountDown.vue"
+import NavBar from "./NavBar.vue"
 
 export default Vue.extend({
-  components: { CountDown },
+  components: { CountDown, NavBar },
+  data: () => ({
+    mobileNavBarVisible: false,
+  }),
 })
 </script>
 
 <style>
 #logo {
-  width: 500px;
+  width: 150px;
 }
 @media screen and (max-width: 767px) {
   #logo {
-    width: 200px;
+    width: 75px;
   }
 }
 </style>
