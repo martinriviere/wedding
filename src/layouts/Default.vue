@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container mx-auto">
     <slot />
   </div>
 </template>
@@ -23,6 +23,4 @@ query {
 }
 </static-query>
 
-<style>
-
-</style>
+<style></style>

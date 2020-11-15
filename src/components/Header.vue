@@ -1,26 +1,26 @@
 <template>
-  <div>
-    <div
-      class="flex items-center justify-between w-full px-4 py-2 sm:px-10 sm:py-5 border-dark border-opacity-25 border-b-2 sm:border-b-0"
-    >
-      <g-image src="../assets/img/logo.png" id="logo" alt="Logo" width="150" />
-      <CountDown class="text-sm sm:text-xl text-dark text-center mx-5" />
-      <div
-        class="sm:hidden text-dark text-3xl"
-        @click="mobileNavBarVisible = true"
-      >
-        <FontAwesome :icon="['fas', 'bars']" />
-      </div>
-    </div>
+  <div
+    class="flex items-center justify-between px-4 py-2 sm:px-10 sm:py-5"
+  >
+    <g-image src="../assets/img/logo.png" id="logo" alt="Logo" width="150" />
+    <CountDown
+      class="text-sm text-gray-400 text-center mx-5 flex-1"
+    />
     <div
       v-show="mobileNavBarVisible"
       @click="mobileNavBarVisible = false"
-      class="w-screen h-screen bg-dark bg-opacity-75 absolute top-0 left-0"
+      class="w-screen h-screen bg-dark bg-opacity-50 absolute top-0 left-0"
     />
     <NavBar
       :mobileVisible="mobileNavBarVisible"
       @close="mobileNavBarVisible = false"
     />
+    <div
+      class="md:hidden text-white text-3xl"
+      @click="mobileNavBarVisible = true"
+    >
+      <FontAwesome :icon="['fas', 'bars']" />
+    </div>
   </div>
 </template>
 
@@ -39,9 +39,9 @@ export default Vue.extend({
 
 <style>
 #logo {
-  width: 150px;
+  width: 125px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 639px) {
   #logo {
     width: 75px;
   }

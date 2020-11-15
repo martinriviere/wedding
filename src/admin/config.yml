@@ -6,12 +6,27 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
-  - label: "Pages"
-    name: "pages"
-    files:
-      - label: "Accueil"
-        name: "main"
-        file: "content/main.md"
-        fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Texte, name: text, widget: markdown }
+  # - label: "Pages"
+  #   name: "pages"
+  #   files:
+  #     - label: "Accueil"
+  #       name: "main"
+  #       file: "content/main.md"
+  #       fields:
+  #         - { label: "Title", name: "title", widget: "string" }
+  #         - { label: "Text", name: "body", widget: "markdown" }
+  - label: "VIP"
+    name: "team"
+    folder: "content/vips"
+    create: true
+    identifier_field: name
+    fields:
+      - { label: "Nom", name: "name", widget: "string" }
+      - { label: "Fonction", name: "function", widget: "string" }
+      - {
+          label: "Relation (frère/soeur)",
+          name: "relation",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Photo", name: "picture", widget: "image" }
