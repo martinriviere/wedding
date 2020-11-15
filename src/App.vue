@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="flex flex-col min-h-screen sm:bg-cover bg-left-top">
+  <div id="app" class="flex flex-col min-h-screen bg-dark">
     <Header v-if="$route.path !== '/'" />
     <router-view />
   </div>
@@ -15,7 +15,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-#app {
-  background-image: url("assets/img/fern.jpg");
+body {
+  font-family: Roboto;
 }
 </style>

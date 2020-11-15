@@ -13,7 +13,16 @@ module.exports = {
         dark: "#414847",
         green: "#84adaa",
         juniper: "#6b9294",
-        grey: "#848a8a",
+        grey: {
+          light: "#848a8a",
+          dark: "#282b2a",
+        },
+        gold: "#a37b55",
+      },
+      fontFamily: {
+        baskerville: ["'Libre Baskerville'", "serif"],
+        haviland: ["'Mr De Haviland'"],
+        arapey: ["Arapey"],
       },
     },
   },

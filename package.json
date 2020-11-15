@@ -14,11 +14,14 @@
     "@gridsome/transformer-remark": "^0.6.3",
     "@types/countdown": "^0.0.7",
     "countdown": "^2.6.0",
+    "fontsource-arapey": "^3.0.9",
+    "fontsource-libre-baskerville": "^3.0.9",
+    "fontsource-mr-de-haviland": "^3.0.5",
+    "fontsource-roboto": "^3.0.3",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "moment": "^2.27.0",
-    "netlify-cms": "^2.10.66",
-    "typeface-libre-baskerville": "^0.0.72"
+    "netlify-cms": "^2.10.66"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^3.0.1",

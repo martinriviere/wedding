@@ -3,15 +3,13 @@
     :class="[
       mobileVisible
         ? 'transform translate-x-0'
-        : 'transform translate-x-full sm:translate-x-0',
-      'sm:w-full bg-dark fixed sm:static top-0 bottom-0 right-0 transition-transform duration-500 ease-out',
+        : 'transform translate-x-full md:translate-x-0',
+      'bg-dark fixed md:static top-0 bottom-0 right-0 transition-transform duration-500 ease-out flex-1',
     ]"
   >
-    <div
-      class="sm:container sm:mx-auto flex flex-col sm:flex-row sm:items-center px-4 py-2 sm:py-5 sm:px-10"
-    >
+    <div class="flex flex-col md:flex-row md:items-center px-4 py-2 md:py-5">
       <div
-        class="text-white text-3xl ml-auto mb-5 sm:hidden"
+        class="text-white text-3xl ml-auto mb-5 md:hidden"
         @click="$emit('close')"
       >
         <FontAwesome :icon="['fas', 'times']" />
@@ -21,8 +19,8 @@
         :to="item.link"
         @click="$emit('close')"
         :key="item.label"
-        class="my-1 sm:my-0 sm:mr-5 text-xl text-white"
-        active-class="text-grey"
+        class="my-1 md:my-0 md:mr-5 text-white text-xl md:text-base"
+        active-class="text-grey-light"
       >
         <span @click="$emit('close')">{{ item.label }}</span>
       </g-link>
@@ -39,8 +37,20 @@ const pages: { label: string; link: string }[] = [
     link: "/accueil",
   },
   {
-    label: "Programme",
-    link: "/programme",
+    label: "Informations",
+    link: "/infos",
+  },
+  {
+    label: "RSVP",
+    link: "/reponse",
+  },
+  {
+    label: "Photos",
+    link: "/photos",
+  },
+  {
+    label: "Mairie",
+    link: "/mairie",
   },
 ]
 

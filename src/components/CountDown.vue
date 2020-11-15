@@ -1,5 +1,5 @@
 <template>
-  <p>{{ countdown }}</p>
+  <div>{{ countdown }}</div>
 </template>
 
 <script lang="ts">

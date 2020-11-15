@@ -4614,6 +4614,26 @@ focus-group@^0.3.1:
   resolved "https://registry.yarnpkg.com/focus-group/-/focus-group-0.3.1.tgz#e0f32ed86b0dabdd6ffcebdf898ecb32e47fedce"
   integrity sha1-4PMu2GsNq91v/OvfiY7LMuR/7c4=
 
+fontsource-arapey@^3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/fontsource-arapey/-/fontsource-arapey-3.0.9.tgz#e8e3cc2a29cf61843be5a8680386e0efe703f8ce"
+  integrity sha512-wrS9PecHZcyvXUFUqVEiFndd9dBqUotlZQfWQ3Dn3n1bwenc0V+c9FtSsaWwBYT8OpmKw73M9oyvXkEXmEam7A==
+
+fontsource-libre-baskerville@^3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/fontsource-libre-baskerville/-/fontsource-libre-baskerville-3.0.9.tgz#74211845f9a085f921c7c25d785389bc8e927b9b"
+  integrity sha512-mIbhAuHh1w6cY0QbbEXZDgQzXMYk/Vl8VUrpT5Fe3Ny7ehb6Wd53mq/zdWeu9HyfQGtu4A9gZuHaN1coT8QrJw==
+
+fontsource-mr-de-haviland@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/fontsource-mr-de-haviland/-/fontsource-mr-de-haviland-3.0.5.tgz#acb188da5c4458a016069f7957adf08b316ef315"
+  integrity sha512-ccZ1CpAxda4neUnsiXAhgFJtyOmieLFZIQ7aOEXBe8Tiiatp6hOD0hNxScIIhqmCZjazl7H2sSLuNE4uehYQRA==
+
+fontsource-roboto@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/fontsource-roboto/-/fontsource-roboto-3.0.3.tgz#99c312babeabce22b3e933b3edf2951d4508f4f7"
+  integrity sha512-kfsC9qAP6XhwnSDAhg2lhWeaUJfLGXZh7GcLxFiz/4lXdkV2pVhWv2Xp9ES3b3BHdc9UuPrWXXLOphzHIStcOw==
+
 for-each@^0.3.3:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/for-each/-/for-each-0.3.3.tgz#69b447e88a0a5d32c3e7084f3f1710034b21376e"
@@ -11617,11 +11637,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeface-libre-baskerville@^0.0.72:
-  version "0.0.72"
-  resolved "https://registry.yarnpkg.com/typeface-libre-baskerville/-/typeface-libre-baskerville-0.0.72.tgz#c5d6d82a9b316f01a1714088f8ca36fe7c3f418b"
-  integrity sha512-8eY5Tee80wNMfKCPYQguj2dODct+sQo3Et7meKOYklvaBRA1PK/DQnaNlYT+I85s1Z7PGUwBtZuG0yOIz4R9vg==
 
 typescript@^4.0.2:
   version "4.0.5"
