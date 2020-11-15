@@ -7,9 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import { config, library } from "@fortawesome/fontawesome-svg-core"
 import { faBars, faTimes, faPhone } from "@fortawesome/free-solid-svg-icons"
 import "@fortawesome/fontawesome-svg-core/styles.css"
+import "leaflet/dist/leaflet.css"
 
-import DefaultLayout from "~/layouts/Default.vue"
-import Phone from "~/components/Phone.vue"
+import DefaultLayout from "./layouts/Default.vue"
+import Phone from "./components/Phone.vue"
 
 library.add(faBars, faTimes, faPhone)
 

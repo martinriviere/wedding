@@ -24,6 +24,10 @@ module.exports = {
         haviland: ["'Mr De Haviland'"],
         arapey: ["Arapey"],
       },
+      backgroundSize: {
+        "30%": "30%",
+        "50%": "50%",
+      },
     },
   },
   variants: {},
