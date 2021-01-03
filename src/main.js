@@ -11,6 +11,7 @@ import "leaflet/dist/leaflet.css"
 
 import DefaultLayout from "./layouts/Default.vue"
 import Phone from "./components/Phone.vue"
+import SectionTitle from "./components/SectionTitle.vue"
 
 library.add(faBars, faTimes, faPhone)
 
@@ -21,4 +22,5 @@ export default function(Vue, { router, head, isClient }) {
   Vue.component("Layout", DefaultLayout)
   Vue.component("FontAwesome", FontAwesomeIcon)
   Vue.component("Phone", Phone)
+  Vue.component("SectionTitle", SectionTitle)
 }

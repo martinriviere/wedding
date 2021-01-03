@@ -1,7 +1,7 @@
 <template>
   <div class="map-container">
-    <LMap :zoom="zoom" :center="center">
-      <LTileLayer :url="url" :options="options" />
+    <LMap :zoom="zoom" :center="center" :options="mapOptions">
+      <LTileLayer :url="url" :options="layerOptions" />
       <LMarker :lat-lng="center" />
     </LMap>
   </div>
@@ -37,7 +37,10 @@ export default Vue.extend({
       zoom: 10,
       center: [44.729471, -0.421311],
       bounds: null,
-      options: {
+      mapOptions: {
+        dragging: true
+      },
+      layerOptions: {
         attribution:
           "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>",
         accessToken:

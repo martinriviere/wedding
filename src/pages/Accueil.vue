@@ -1,5 +1,4 @@
 <template>
-  <!-- <Layout> -->
   <div>
     <div class="bg-white">
       <div class="container mx-auto flex flex-col sm:flex-row items-center">
@@ -7,9 +6,9 @@
           <g-image src="../assets/img/main/calendar.jpg" alt="Calendrier" />
         </div>
         <div class="flex flex-col items-center text-center p-5 sm:w-1/2">
-          <h2 class="text-2xl text-gold font-semibold uppercase font-arapey">
+          <SectionTitle>
             Save the date
-          </h2>
+          </SectionTitle>
           <p class="my-4 text-2xl sm:text-4xl font-haviland">10 Juillet 2021</p>
           <p>
             Nous avons créé ce site dédié à notre mariage pour que vous ayez
@@ -23,11 +22,9 @@
     <div class="flower bg-50% sm:bg-30% bg-no-repeat">
       <div class="container mx-auto flex flex-col sm:flex-row items-center">
         <div class="flex flex-col items-center text-center p-5 sm:w-1/2">
-          <h2
-            class="text-2xl text-gold font-semibold uppercase font-arapey mb-5"
-          >
+          <SectionTitle class="mb-5">
             Une vraie histoire d'amour
-          </h2>
+          </SectionTitle>
           <div class="text-white">
             <p>
               La cloche a sonné la fin des cours de la journée. Nous avions
@@ -56,12 +53,12 @@
         </div>
       </div>
     </div>
-    <div class="bg-grey-dark text-white py-5">
+    <div class="bg-grey-dark py-5">
       <div class="container mx-auto flex flex-col items-center">
-        <h2 class="text-2xl font-semibold uppercase font-arapey mb-5">
+        <SectionTitle class="mb-5">
           Contactez nous
-        </h2>
-        <div class="flex flex-col sm:flex-row sm:justify-around">
+        </SectionTitle>
+        <div class="flex flex-col sm:flex-row sm:justify-around text-white">
           <Phone name="Manon Mazancieux" phone="06 49 66 55 86" />
           <Phone name="Martin Rivière" phone="06 81 44 76 44" />
         </div>
@@ -69,7 +66,6 @@
     </div>
     <Map />
   </div>
-  <!-- </Layout> -->
 </template>
 
 <script lang="ts">
