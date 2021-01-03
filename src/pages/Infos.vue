@@ -51,7 +51,7 @@ export default Vue.extend({
   data() {
     return {
       program: [
-        "14h30 : Arrivée des invités",
+        "14h : Arrivée des invités",
         "Jeux en plein air",
         "16h30 : Séance photos",
         "17h : Cérémonie laïque",
