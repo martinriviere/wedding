@@ -24,9 +24,18 @@ collections:
       - { label: "Nom", name: "name", widget: "string" }
       - { label: "Fonction", name: "function", widget: "string" }
       - {
-          label: "Relation (frère/soeur)",
+          label: "Relation (frère/soeur...)",
           name: "relation",
           widget: "string",
           required: false,
         }
       - { label: "Photo", name: "picture", widget: "image" }
+  - label: "Activity"
+    name: "activities"
+    folder: "content/activities"
+    create: true
+    identifier_field: name
+    fields:
+      - { label: "Nom", name: "name", widget: "string" }
+      - { label: "Texte", name: "body", widget: "markdown" }
+      - { label: "Image", name: "picture", widget: "image" }

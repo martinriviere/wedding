@@ -4,7 +4,7 @@
       mobileVisible
         ? 'right-0'
         : '-right-full',
-      'bg-dark fixed md:static top-0 bottom-0 transition-all duration-500 ease-out flex-1',
+      'bg-dark fixed md:static top-0 bottom-0 transition-all duration-500 ease-out z-10',
     ]"
   >
     <div class="flex flex-col md:flex-row md:items-center px-4 py-2 md:py-5">

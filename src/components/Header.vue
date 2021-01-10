@@ -4,7 +4,7 @@
   >
     <g-image src="../assets/img/logo.png" id="logo" alt="Logo" width="150" />
     <CountDown
-      class="text-sm text-gray-400 text-center mx-5 flex-1"
+      class="text-sm lg:text-lg text-gray-400 text-center mx-5 flex-1"
     />
     <div
       v-show="mobileNavBarVisible"
