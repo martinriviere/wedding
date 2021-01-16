@@ -28,13 +28,12 @@
       <h3 class="text-white mb-5">
         Conseils pour votre organisation
       </h3>
-      <div class="flex flex-col sm:flex-row items-center sm:items-stretch sm:justify-around">
-        <InfoCard
-          v-for="info in infos"
-          :key="info.title"
-          :info="info"
-          class="h-64 sm:h-auto sm:w-1/4"
-        />
+      <div
+        class="flex flex-col sm:flex-row items-center sm:items-stretch sm:justify-around"
+      >
+        <g-link v-for="info in infos" :key="info.title" :to="info.link" class="h-64 sm:h-auto sm:w-1/4">
+          <InfoCard :info="info" class="w-full h-full" />
+        </g-link>
       </div>
     </div>
   </div>
@@ -64,16 +63,19 @@ export default Vue.extend({
           title: "Transports",
           description: "Comment s'y rendre ?",
           img: "infos/transport.jpg",
+          link: "/transports",
         },
         {
           title: "Activités",
           description: "Que faire dans le coin ?",
           img: "infos/activities.jpg",
+          link: "activities",
         },
         {
           title: "Hébergement",
           description: "Où se loger ?",
           img: "infos/accomodation.jpg",
+          link: "accomodation",
         },
       ],
     }

@@ -9,7 +9,7 @@
     <div
       v-show="mobileNavBarVisible"
       @click="mobileNavBarVisible = false"
-      class="w-screen h-screen bg-dark bg-opacity-50 absolute top-0 left-0"
+      class="w-screen h-screen bg-dark bg-opacity-50 absolute top-0 left-0 z-10"
     />
     <NavBar
       :mobileVisible="mobileNavBarVisible"
