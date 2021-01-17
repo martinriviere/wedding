@@ -1,7 +1,7 @@
 ---
 id: 6
 title: Le château Champcenetz
-picture: ../../src/assets/img/activities/champcenetz.jpg
+picture: ../../src/assets/img/activities/Champcenetz.jpg
 ---
 Château Champcenetz  
 A 6 minutes en voiture du domaine.  
