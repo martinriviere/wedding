@@ -1,6 +1,6 @@
 ---
 id: 8
-tittle: Cluedo des avanturiers : enquête à Langoiran
+tittle: Cluedo des avanturiers
 picture: ../../src/assets/img/activities/cluedo.png
 ---
 Cluedo des aventuriers : Enquête à Langoiran
