@@ -23,11 +23,15 @@
 <script lang="ts">
 import Vue from "vue"
 import ActivityCard from "../components/activities/ActivityCard.vue"
+import firebase from 'firebase/app'
 
 export default Vue.extend({
   components: {
     ActivityCard,
   },
+  mounted() {
+    console.log(firebase.auth().currentUser)
+  }
 })
 </script>
 

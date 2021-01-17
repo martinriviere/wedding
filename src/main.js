@@ -8,6 +8,7 @@ import { config, library } from "@fortawesome/fontawesome-svg-core"
 import { faBars, faTimes, faPhone } from "@fortawesome/free-solid-svg-icons"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import "leaflet/dist/leaflet.css"
+import "./config/firebase"
 
 import DefaultLayout from "./layouts/Default.vue"
 import Phone from "./components/Phone.vue"
