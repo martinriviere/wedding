@@ -35,11 +35,10 @@ module.exports = {
       */
     },
     {
-      use: '@gridsome/source-strapi',
+      use: "@gridsome/source-filesystem",
       options: {
-        apiURL: `http://localhost:1337`,
-        queryLimit: 1000, // Defaults to 100
-        contentTypes: [`activity`],
+        path: "content/activities/*.md",
+        typeName: "Activity",
       },
     },
   ],

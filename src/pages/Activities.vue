@@ -32,17 +32,15 @@ export default Vue.extend({
 </script>
 
 <page-query>
-  query {
-    activities: allStrapiActivity(sortBy: "id", order: ASC) {
-      edges {
-        node {
-          title
-          text
-          picture {
-            url
-          }
-        }
+query {
+  activities: allActivity(sortBy: "id", order: ASC) {
+    edges {
+      node {
+        title
+        picture(width: 700, height: 700)
+        content
       }
     }
   }
+}
 </page-query>

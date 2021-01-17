@@ -18,24 +18,24 @@ module.exports = function(api) {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
   })
 
-  api.onCreateNode((options) => {
-    const match = options?.internal?.typeName.match(/Strapi(.+)/)
-    if (match) {
-      const dirPath = `./src/assets/img/${match[1].toLowerCase()}`
-      if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath)
-      }
-      const filePath = path.join(
-        dirPath,
-        options.picture.hash + options.picture.ext
-      )
+  // api.onCreateNode((options) => {
+  //   const match = options?.internal?.typeName.match(/Strapi(.+)/)
+  //   if (match) {
+  //     const dirPath = `./src/assets/img/${match[1].toLowerCase()}`
+  //     if (!fs.existsSync(dirPath)) {
+  //       fs.mkdirSync(dirPath)
+  //     }
+  //     const filePath = path.join(
+  //       dirPath,
+  //       options.picture.hash + options.picture.ext
+  //     )
 
       
-      http.get(`http://localhost:1337${options.picture.url}`, (response) => {
-        options.picture.url = path.resolve(__dirname, filePath)
-        const file = fs.createWriteStream(filePath);
-        response.pipe(file);
-      })
-    }
-  })
+  //     http.get(`http://localhost:1337${options.picture.url}`, (response) => {
+  //       options.picture.url = path.resolve(__dirname, filePath)
+  //       const file = fs.createWriteStream(filePath);
+  //       response.pipe(file);
+  //     })
+  //   }
+  // })
 }
