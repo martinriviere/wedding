@@ -12,8 +12,8 @@
       <div class="container mx-auto grid grid-cols-3 gap-1 md:gap-3">
         <ActivityCard
           v-for="activity in $page.activities.edges"
-          :key="activity.node.name"
-          :activity="activity"
+          :key="'activity' + activity.node.id"
+          :activity="activity.node"
         />
       </div>
     </div>
@@ -39,6 +39,7 @@ query {
         title
         picture(width: 700, height: 700)
         content
+        id
       }
     }
   }

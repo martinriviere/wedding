@@ -1,13 +1,14 @@
 <template>
   <div class="relative">
-    <g-image
-      :src="activity.node.picture"
-    />
+    <g-link :to="`activities-list#${activity.id}`">
+      <g-image :src="activity.picture" />
+    </g-link>
     <div
       class="absolute opacity-0 md:hover:opacity-100 flex items-center p-12 bg-black bg-opacity-50 inset-0"
     >
-      <div class="text-white" v-html="activity.node.content" />
+      <div class="text-white" v-html="activity.content" />
     </div>
+    <g-link :to="`activities-list#${activity.id}`" class="absolute inset-0 md:hidden" />
   </div>
 </template>
 
@@ -22,6 +23,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 div ::v-deep ul {
-  list-style: disc;
+  list-style: disc inside;
 }
 </style>
