@@ -14,6 +14,7 @@
     "@gridsome/transformer-remark": "^0.6.3",
     "@types/countdown": "^0.0.7",
     "@types/leaflet": "^1.5.19",
+    "body-scroll-lock": "^3.1.5",
     "countdown": "^2.6.0",
     "fontsource-arapey": "^3.0.9",
     "fontsource-libre-baskerville": "^3.0.9",
@@ -24,6 +25,7 @@
     "vue2-leaflet": "^2.6.0"
   },
   "devDependencies": {
+    "@types/body-scroll-lock": "^2.6.1",
     "gridsome-plugin-tailwindcss": "^3.0.1",
     "gridsome-plugin-typescript": "^0.4.0",
     "node-sass": "^4.14.1",

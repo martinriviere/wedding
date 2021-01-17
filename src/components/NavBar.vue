@@ -1,9 +1,7 @@
 <template>
   <div
     :class="[
-      mobileVisible
-        ? 'right-0'
-        : '-right-full',
+      mobileVisible ? 'right-0' : '-right-full',
       'bg-dark fixed md:static top-0 bottom-0 transition-all duration-500 ease-out z-10',
     ]"
   >
