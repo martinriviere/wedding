@@ -1,7 +1,7 @@
 ---
 id: 4
 title: Songes au lit du fleuve
-picture: ../../src/assets/img/activities/songes.jpg
+picture: ../../src/assets/img/accomodation/songes.jpg
 ---
 Songes au lit du fleuve  
 A 7 minutes en voiture du domaine.  
