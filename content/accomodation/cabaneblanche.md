@@ -1,7 +1,7 @@
 ---
 id: 1
 title: La maison cabane blanche
-picture: ../../src/assets/img/activities/cabaneblanche.jpg
+picture: ../../src/assets/img/accomodation/cabaneblanche.jpg
 ---
 La maison cabane blanche  
 A 2 minutes en voiture du domaine.  
