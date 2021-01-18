@@ -1,7 +1,7 @@
 ---
 id: 2
 title: Le château Canteloup
-picture: ../../src/assets/img/activities/canteloup.jpg
+picture: ../../src/assets/img/accomodation/canteloup.jpg
 ---
 A 5 minutes en voiture du domaine.  
 Logement pour 15 à 22 personnes.  
