@@ -1,7 +1,7 @@
 ---
 id: 5
 title: Le château Bessan
-picture: ../../src/assets/img/activities/bessan.jpg
+picture: ../../src/assets/img/accomodation/bessan.jpg
 ---
 Château Bessan  
 A 6 minutes en voiture du domaine.  
