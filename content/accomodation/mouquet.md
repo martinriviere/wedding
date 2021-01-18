@@ -1,7 +1,7 @@
 ---
 id: 8
 title: Le prieuré de Mouquet
-picture: ../../src/assets/img/activities/mouquet.jpg
+picture: ../../src/assets/img/accomodation/mouquet.jpg
 ---
 Le prieuré de Mouquet  
 A 15 minutes en voiture du domaine.  
