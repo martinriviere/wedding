@@ -1,7 +1,7 @@
 ---
 id: 7
 title: 249 Roberie Sud
-picture: ../../src/assets/img/activities/roberie.jpg
+picture: ../../src/assets/img/accomodation/roberie.jpg
 ---
 249 Roberie Sud  
 A 9 minutes en voiture du domaine.  
