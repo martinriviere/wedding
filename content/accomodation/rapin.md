@@ -1,7 +1,7 @@
 ---
 id: 9
 title: Hôtel Rapin
-picture: ../../src/assets/img/activities/rapin.jpg
+picture: ../../src/assets/img/accomodation/rapin.jpg
 ---
 Hôtel Rapin  
 A 10 minutes en voiture du domaine.  
