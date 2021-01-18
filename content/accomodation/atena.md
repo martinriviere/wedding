@@ -1,7 +1,7 @@
 ---
 id: 11
 title: Hôtel Atena
-picture: ../../src/assets/img/activities/atena.jpg
+picture: ../../src/assets/img/accomodation/atena.jpg
 ---
 Hôtel Atena  
 A 13 minutes en voiture du domaine.  
