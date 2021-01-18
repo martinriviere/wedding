@@ -1,7 +1,7 @@
 ---
 id: 10
 title: Hôtel Arcins
-picture: ../../src/assets/img/activities/arcins.jpg
+picture: ../../src/assets/img/accomodation/arcins.jpg
 ---
 Hôtel Arcins  
 A 15 minutes en voiture du domaine.  
