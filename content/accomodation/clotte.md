@@ -1,7 +1,7 @@
 ---
 id: 3
 title: Maison d’hôte la Clotte
-picture: ../../src/assets/img/activities/clotte.jpg
+picture: ../../src/assets/img/accomodation/clotte.jpg
 ---
 A 9 minutes en voiture du domaine.  
 Réservation par téléphone ou mail uniquement.  
