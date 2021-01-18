@@ -1,7 +1,7 @@
 ---
 id: 12
 title: Château Sentout
-picture: ../../src/assets/img/activities/sentout.png
+picture: ../../src/assets/img/accomodation/sentout.png
 ---
 Château Sentout  
 Au domaine du mariage.  
