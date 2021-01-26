@@ -11,11 +11,12 @@
         width="500"
       />
       <CountDown class="text-xl sm:text-4xl text-gray-400 font-baskerville" />
-      <form @submit="login">
-        <input type="text" v-model="email" />
-        <input type="password" v-model="password" />
-        <input type="submit" value="Connexion" />
+      <form @submit.prevent="login" class="flex flex-col my-4">
+        <input type="text" v-model="email" class="my-1 px-2 py-1 bg-dark rounded text-white" placeholder="Nom d'utilisateur"/>
+        <input type="password" v-model="password" class="my-1 px-2 py-1 bg-dark rounded text-white" placeholder="Mot de passe" />
+        <input type="submit" value="Connexion" class="my-1 bg-dark rounded text-gold" />
       </form>
+      <p v-if="error" class="text-white text-center">{{ error }}</p>
     </div>
   </div>
 </template>
@@ -23,7 +24,7 @@
 <script lang="ts">
 import Vue from "vue"
 import CountDown from "../components/CountDown.vue"
-import firebase from "firebase/app"
+import { auth } from "../config/firebase"
 
 export default Vue.extend({
   components: { CountDown },
@@ -31,22 +32,21 @@ export default Vue.extend({
     return {
       email: "",
       password: "",
+      error: "",
     }
   },
   methods: {
-    async login(e: Event) {
-      e.preventDefault()
+    async login() {
       try {
-        const user = await firebase
-          .auth()
-          .signInWithEmailAndPassword(
-            `${this.email}@manonetmartin.fr`,
-            this.password
-          )
+        await auth.signInWithEmailAndPassword(
+          `${this.email}@manonetmartin.fr`,
+          this.password
+        )
         // @ts-ignore
-        this.$router.replace("/accueil")
+        this.$router.replace("/home")
       } catch (e) {
-        console.log(e)
+        if (["auth/user-not-found", "auth/wrong-password"].includes(e.code))
+          this.error = "Nom d'utilisateur ou mot de passe incorrect"
       }
     },
   },
