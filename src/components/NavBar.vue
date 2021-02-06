@@ -22,17 +22,23 @@
       >
         <span @click="$emit('close')">{{ item.label }}</span>
       </g-link>
+      <span
+        class="my-1 md:my-0 md:mr-5 text-white text-xl md:text-base cursor-pointer"
+        @click="logOut"
+        >Déconnexion</span
+      >
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue"
+import { auth } from "../config/firebase"
 
 const pages: { label: string; link: string }[] = [
   {
     label: "Accueil",
-    link: "/accueil",
+    link: "/home",
   },
   {
     label: "Informations",
@@ -40,11 +46,11 @@ const pages: { label: string; link: string }[] = [
   },
   {
     label: "RSVP",
-    link: "/reponse",
+    link: "/response",
   },
   {
     label: "Photos",
-    link: "/photos",
+    link: "/pictures",
   },
   {
     label: "Mairie",
@@ -60,6 +66,11 @@ export default Vue.extend({
     return {
       pages,
     }
+  },
+  methods: {
+    logOut() {
+      auth.signOut()
+    },
   },
 })
 </script>
