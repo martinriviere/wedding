@@ -32,19 +32,19 @@ import Vue from "vue"
 const pages: { label: string; link: string }[] = [
   {
     label: "Accueil",
-    link: "/accueil",
+    link: "/home",
   },
   {
     label: "Informations",
-    link: "/infos",
+    link: "/info",
   },
   {
     label: "RSVP",
-    link: "/reponse",
+    link: "/response",
   },
   {
     label: "Photos",
-    link: "/photos",
+    link: "/pictures",
   },
   {
     label: "Mairie",
