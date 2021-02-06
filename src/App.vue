@@ -36,10 +36,10 @@ export default Vue.extend({
     },
   },
   created() {
-    auth.onAuthStateChanged((user) => {
+    auth.onAuthStateChanged(async (user) => {
       this.$store.commit(
         "setUser",
-        user ? { email: user.email, displayName: user.displayName } : null
+        user ? { email: user.email, displayName: user.displayName, id: user.uid } : null
       )
     })
   },

@@ -3,6 +3,7 @@ import { StoreOptions } from "vuex"
 interface User {
   email: string
   displayName: string
+  id: string
 }
 
 interface State {
