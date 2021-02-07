@@ -1,4 +1,5 @@
-import { StoreOptions } from "vuex"
+import { StoreOptions } from 'vuex'
+import { db } from './config/firebase'
 
 interface User {
   email: string
@@ -26,6 +27,7 @@ const options: StoreOptions<State> = {
   },
   getters: {
     loggedIn: (state) => !!state.user,
+    userRef: (state) => state.user && db.collection('users').doc(state.user.id)
   },
 }
 
