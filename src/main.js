@@ -9,12 +9,14 @@ import { config, library } from "@fortawesome/fontawesome-svg-core"
 import { faBars, faTimes, faPhone } from "@fortawesome/free-solid-svg-icons"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import "leaflet/dist/leaflet.css"
-import { auth } from "./config/firebase"
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+
 import store from "./store";
 
 import DefaultLayout from "./layouts/Default.vue"
 import Phone from "./components/Phone.vue"
 import SectionTitle from "./components/SectionTitle.vue"
+import FormButton from "./components/FormButton.vue"
 
 library.add(faBars, faTimes, faPhone)
 
@@ -29,6 +31,8 @@ export default function(Vue, { router, appOptions, head, isClient }) {
   Vue.component("FontAwesome", FontAwesomeIcon)
   Vue.component("Phone", Phone)
   Vue.component("SectionTitle", SectionTitle)
+  Vue.component("FormButton", FormButton)
+  Vue.component("Loader", PulseLoader)
 
   // router.beforeEach((to, from, next) => {
   //   if (to.path !== "/" && !auth.currentUser) {
