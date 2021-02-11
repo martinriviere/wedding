@@ -4,7 +4,7 @@
       <g-image :src="activity.picture" />
     </g-link>
     <div
-      class="absolute opacity-0 md:hover:opacity-100 flex items-center p-12 bg-black bg-opacity-50 inset-0"
+      class="absolute hidden md:flex opacity-0 md:hover:opacity-100 items-center p-12 bg-black bg-opacity-50 inset-0"
     >
       <div class="text-white" v-html="activity.content" />
     </div>

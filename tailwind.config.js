@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       backgroundImage: (theme) => ({
         fern: "url('/assets/img/fern.jpg')",
+        flower: "url('/assets/img/flower.png')"
       }),
       colors: {
         dark: "#414847",

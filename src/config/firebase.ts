@@ -16,3 +16,4 @@ firebase.initializeApp(config)
 
 export const auth = firebase.auth()
 export const db = firebase.firestore()
+export const deleteField = firebase.firestore.FieldValue.delete

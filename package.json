@@ -23,6 +23,7 @@
     "fontsource-roboto": "^3.0.3",
     "gridsome": "^0.7.0",
     "leaflet": "^1.7.1",
+    "vue-spinner": "^1.0.4",
     "vue2-leaflet": "^2.6.0",
     "vuex": "^3.6.0"
   },

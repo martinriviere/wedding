@@ -42,7 +42,7 @@ const pages: { label: string; link: string }[] = [
   },
   {
     label: "Informations",
-    link: "/infos",
+    link: "/info",
   },
   {
     label: "RSVP",
