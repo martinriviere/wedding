@@ -3,7 +3,7 @@
     <div class="container mx-auto flex flex-col items-center">
       <ActivityListTile
         v-for="activity in $page.activities.edges"
-        :key="'activity' + activity.node.id"
+        :key="activity.node.id"
         :activity="activity.node"
         :id="activity.node.id"
         class="mb-4"

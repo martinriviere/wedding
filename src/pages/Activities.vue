@@ -12,7 +12,7 @@
       <div class="container mx-auto grid grid-cols-3 gap-1 md:gap-3">
         <ActivityCard
           v-for="activity in $page.activities.edges"
-          :key="'activity' + activity.node.id"
+          :key="activity.node.id"
           :activity="activity.node"
         />
       </div>
@@ -21,8 +21,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import ActivityCard from "../components/activities/ActivityCard.vue"
+import Vue from 'vue'
+import ActivityCard from '../components/activities/ActivityCard.vue'
 
 export default Vue.extend({
   components: {
