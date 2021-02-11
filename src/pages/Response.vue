@@ -1,6 +1,7 @@
 <template>
   <div class="bg-white flex flex-grow flex-wrap">
-    <div class="bg-flower bg-cover flex flex-col w-screen sm:w-1/2 items-center justify-center">
+    <div class="flex flex-col w-screen sm:w-1/2 items-center justify-center relative">
+      <div class="bg-flower bg-cover w-full h-full absolute opacity-25" />
       <h2 class="text-3xl font-bold text-gold">RSVP</h2>
       <h3 class="text-xl">Avant le 15 avril 2021</h3>
     </div>
