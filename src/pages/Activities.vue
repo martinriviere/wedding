@@ -9,24 +9,29 @@
       </h3>
     </div>
     <div class="bg-white py-1 md:py-3">
-      <div class="container mx-auto grid grid-cols-3 gap-1 md:gap-3">
-        <ActivityCard
+      <Grid>
+        <GridCard
           v-for="activity in $page.activities.edges"
           :key="activity.node.id"
-          :activity="activity.node"
-        />
-      </div>
+          :id="activity.node.id"
+          :picture="activity.node.picture"
+        >
+          <div class="text-white" v-html="activity.node.content" />
+        </GridCard>
+      </Grid>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import ActivityCard from '../components/activities/ActivityCard.vue'
+import Grid from '../components/Grid.vue'
+import GridCard from '../components/GridCard.vue'
 
 export default Vue.extend({
   components: {
-    ActivityCard,
+    Grid,
+    GridCard,
   },
 })
 </script>
