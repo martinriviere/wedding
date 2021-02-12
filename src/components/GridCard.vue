@@ -1,22 +1,21 @@
 <template>
   <div class="relative">
-    <g-link :to="`activities-list#${activity.id}`">
-      <g-image :src="activity.picture" />
-    </g-link>
+    <g-image :src="picture" />
     <div
       class="absolute hidden md:flex opacity-0 md:hover:opacity-100 items-center p-12 bg-black bg-opacity-50 inset-0"
     >
-      <div class="text-white" v-html="activity.content" />
+      <slot />
     </div>
-    <g-link :to="`activities-list#${activity.id}`" class="absolute inset-0 md:hidden" />
+    <g-link :to="`${$route.path}-list#${id}`" class="absolute inset-0 md:hidden" />
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue"
+import Vue, { PropType } from 'vue'
 export default Vue.extend({
   props: {
-    activity: Object,
+    id: String,
+    picture: Object,
   },
 })
 </script>
