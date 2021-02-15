@@ -11,12 +11,12 @@
     <div class="bg-white py-1 md:py-3">
       <Grid>
         <GridCard
-          v-for="activity in $page.activities.edges"
-          :key="activity.node.id"
-          :id="activity.node.id"
-          :picture="activity.node.picture"
+          v-for="activity in $page.activities.edges.map((e) => e.node)"
+          :key="activity.id"
+          :id="activity.id"
+          :picture="activity.picture"
         >
-          <div class="text-white" v-html="activity.node.content" />
+          <div class="text-white" v-html="activity.content" />
         </GridCard>
       </Grid>
     </div>

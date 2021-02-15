@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import Vue from "vue"
-import ActivityListTile from "../components/activities/ActivityListTile.vue"
+import ActivityListTile from "../components/ActivityListTile.vue"
 
 export default Vue.extend({
   components: {
