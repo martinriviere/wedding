@@ -9,27 +9,19 @@
       </h3>
     </div>
     <div class="bg-white py-1 md:py-3">
-      <div class="container mx-auto grid grid-cols-3 gap-1 md:gap-3">
-        <ActivityCard
-          v-for="activity in $page.activities.edges"
-          :key="activity.node.id"
-          :activity="activity.node"
-        />
-      </div>
+      <Grid>
+        <GridCard
+          v-for="activity in $page.activities.edges.map((e) => e.node)"
+          :key="activity.id"
+          :id="activity.id"
+          :picture="activity.picture"
+        >
+          <div class="text-white" v-html="activity.content" />
+        </GridCard>
+      </Grid>
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-import ActivityCard from '../components/activities/ActivityCard.vue'
-
-export default Vue.extend({
-  components: {
-    ActivityCard,
-  },
-})
-</script>
 
 <page-query>
 query {

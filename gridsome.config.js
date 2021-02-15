@@ -41,6 +41,20 @@ module.exports = {
         typeName: "Activity",
       },
     },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/accomodation/*.md",
+        typeName: "Accomodation",
+      },
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "content/team/*.md",
+        typeName: "Team",
+      },
+    },
   ],
   chainWebpack: (config) => {
     config.resolve.alias.set(`@images`, `@/assets/img`)

@@ -6,10 +6,7 @@
     ]"
   >
     <div class="flex flex-col md:flex-row md:items-center px-4 py-2 md:py-5">
-      <div
-        class="text-white text-3xl ml-auto mb-5 md:hidden"
-        @click="$emit('close')"
-      >
+      <div class="text-white text-3xl ml-auto mb-5 md:hidden" @click="$emit('close')">
         <FontAwesome :icon="['fas', 'times']" />
       </div>
       <g-link
@@ -22,9 +19,7 @@
       >
         <span @click="$emit('close')">{{ item.label }}</span>
       </g-link>
-      <span
-        class="my-1 md:my-0 md:mr-5 text-white text-xl md:text-base cursor-pointer"
-        @click="logOut"
+      <span class="my-1 md:my-0 md:mr-5 text-white text-xl md:text-base cursor-pointer" @click="logOut"
         >Déconnexion</span
       >
     </div>
@@ -32,29 +27,33 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import { auth } from "../config/firebase"
+import Vue from 'vue'
+import { auth } from '../config/firebase'
 
 const pages: { label: string; link: string }[] = [
   {
-    label: "Accueil",
-    link: "/home",
+    label: 'Accueil',
+    link: '/home',
   },
   {
-    label: "Informations",
-    link: "/info",
+    label: 'Informations',
+    link: '/info',
   },
   {
-    label: "RSVP",
-    link: "/response",
+    label: 'RSVP',
+    link: '/response',
   },
   {
-    label: "Photos",
-    link: "/pictures",
+    label: 'Team',
+    link: '/team',
   },
   {
-    label: "Mairie",
-    link: "/mairie",
+    label: 'Photos',
+    link: '/pictures',
+  },
+  {
+    label: 'Mairie',
+    link: '/mairie',
   },
 ]
 

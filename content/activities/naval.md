@@ -1,6 +1,6 @@
 ---
 id: 7
-tittle: Chantier naval de Tramasset
+title: Chantier naval de Tramasset
 picture: ../../src/assets/img/activities/naval2.jpg
 ---
 Les chantiers navals Tramasset  
