@@ -1,6 +1,6 @@
 ---
 id: 5
-tittle: Base nautique de Baurech
+title: Base nautique de Baurech
 picture: ../../src/assets/img/activities/nautique.png
 ---
 Parcours de 640 mètres de téléski nautique (9 accrocheurs) au lac de Baurech.  

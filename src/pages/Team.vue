@@ -1,12 +1,11 @@
 <template>
   <div>
-    <div>{{ $page.description.title }}</div>
-    <div class="bg-white w-full mb-4">
+    <div class="bg-white w-full mb-1">
       <div class="container mx-auto">
         <div class="flex flex-col sm:flex-row mb-4">
           <g-image src="../assets/img/team/us.jpg" class="hidden sm:block w-screen sm:w-1/2" />
           <div class="w-screen sm:w-1/2 p-5 self-center">
-            <SectionTitle class="mb-5">
+            <SectionTitle class="mb-2 sm:mb-5">
               Présentation de la team mariés
             </SectionTitle>
             <p class="mb-2">
@@ -18,7 +17,12 @@
             </p>
           </div>
         </div>
-        <div v-html="$page.description.content" class="p-5" />
+        <div class="p-5">
+          <SectionTitle class="mb-2 sm:mb-5">
+            {{ $page.description.name }}
+          </SectionTitle>
+          <div v-html="$page.description.content" />
+        </div>
       </div>
     </div>
     <Grid>
@@ -32,21 +36,6 @@
     </Grid>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-import Grid from '../components/Grid.vue'
-import GridCard from '../components/GridCard.vue'
-import SectionTitle from '../components/SectionTitle.vue'
-
-export default Vue.extend({
-  components: {
-    Grid,
-    GridCard,
-    SectionTitle,
-  },
-})
-</script>
 
 <page-query>
 query {

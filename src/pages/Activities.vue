@@ -23,19 +23,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import Grid from '../components/Grid.vue'
-import GridCard from '../components/GridCard.vue'
-
-export default Vue.extend({
-  components: {
-    Grid,
-    GridCard,
-  },
-})
-</script>
-
 <page-query>
 query {
   activities: allActivity(sortBy: "id", order: ASC) {
