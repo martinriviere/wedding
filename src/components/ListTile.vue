@@ -1,18 +1,17 @@
 <template>
   <div>
-    <g-image :src="activity.picture" />
+    <g-image :src="picture" />
     <div class="px-3">
-      <h2 class="text-lg text-gold">{{ activity.title }}</h2>
-      <div v-html="activity.content" class="text-gray-400" />
+      <slot />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue"
+import Vue from 'vue'
 export default Vue.extend({
   props: {
-    activity: Object,
+    picture: Object,
   },
 })
 </script>

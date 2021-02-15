@@ -1,27 +1,17 @@
 <template>
-  <div class="w-full">
-    <div class="container mx-auto flex flex-col items-center">
-      <ActivityListTile
-        v-for="activity in $page.activities.edges"
-        :key="activity.node.id"
-        :activity="activity.node"
-        :id="activity.node.id"
-        class="mb-4"
-      />
-    </div>
-  </div>
+  <List>
+    <ListTile
+      v-for="activity in $page.activities.edges.map((e) => e.node)"
+      :key="activity.id"
+      :picture="activity.picture"
+      :id="activity.id"
+      class="mb-4"
+    >
+      <h2 class="text-lg text-gold">{{ activity.title }}</h2>
+      <div v-html="activity.content" class="text-gray-400" />
+    </ListTile>
+  </List>
 </template>
-
-<script lang="ts">
-import Vue from "vue"
-import ActivityListTile from "../components/ActivityListTile.vue"
-
-export default Vue.extend({
-  components: {
-    ActivityListTile,
-  },
-})
-</script>
 
 <page-query>
 query {
