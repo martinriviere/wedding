@@ -1,6 +1,6 @@
 ---
 id: 6
-tittle: Parc accrobranche Arbor et Sens
+title: Parc accrobranche Arbor et Sens
 picture: ../../src/assets/img/activities/acrobranche.png
 ---
 Le plus grand parc aventure de Gironde :  

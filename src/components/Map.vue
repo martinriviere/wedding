@@ -38,7 +38,8 @@ export default Vue.extend({
       center: [44.729471, -0.421311],
       bounds: null,
       mapOptions: {
-        dragging: true
+        dragging: true,
+        scrollWheelZoom: false
       },
       layerOptions: {
         attribution:

@@ -22,7 +22,7 @@
     <div class="flower bg-50% sm:bg-30% bg-no-repeat">
       <div class="container mx-auto flex flex-col sm:flex-row items-center">
         <div class="flex flex-col items-center text-center p-5 sm:w-1/2">
-          <SectionTitle class="mb-5">
+          <SectionTitle class="mb-2 sm:mb-5">
             Une vraie histoire d'amour
           </SectionTitle>
           <div class="text-white">
@@ -55,7 +55,7 @@
     </div>
     <div class="bg-grey-dark py-5">
       <div class="container mx-auto flex flex-col items-center">
-        <SectionTitle class="mb-5">
+        <SectionTitle class="mb-2 sm:mb-5">
           Contactez nous
         </SectionTitle>
         <div class="flex flex-col sm:flex-row sm:justify-around text-white">
