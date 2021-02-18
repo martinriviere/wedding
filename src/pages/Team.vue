@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="bg-white w-full mb-1">
+    <div class="bg-white w-full mb-1 md:mb-3">
       <div class="container mx-auto">
         <div class="flex flex-col sm:flex-row mb-4">
           <g-image src="../assets/img/team/us.jpg" class="hidden sm:block w-screen sm:w-1/2" />
-          <div class="w-screen sm:w-1/2 p-5 self-center">
+          <div class="w-screen sm:w-1/2 p-5 self-center relative">
             <SectionTitle class="mb-2 sm:mb-5">
               Présentation de la team mariés
             </SectionTitle>
