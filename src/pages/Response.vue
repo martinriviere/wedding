@@ -70,6 +70,7 @@
 import Vue from 'vue'
 import FormButton from '../components/FormButton.vue'
 import { deleteField } from '../config/firebase'
+
 export default Vue.extend({
   components: { FormButton },
   data() {
