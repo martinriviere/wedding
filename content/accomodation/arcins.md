@@ -6,6 +6,6 @@ picture: ../../src/assets/img/accomodation/arcins.jpg
 Hôtel Arcins  
 A 15 minutes en voiture du domaine.  
 Logement de 24 chambres.  
-Adresse : 11 Bis Avenue de la Libération, 33360 Latresnes  
+Adresse : 11 Bis Avenue de la Libération, 33360 Latresne  
 N de tel : 05 56 20 15 27  
 [Lien du gîte](https://hotel-arcins.fr/chambre/page/2/)
