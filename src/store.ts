@@ -3,18 +3,25 @@ import { db } from './config/firebase'
 
 interface User {
   email: string
-  displayName: string
   id: string
+  mairie: boolean
+  vip: boolean
+  attends: boolean
+  adults: number
+  children: number
+  dinner: boolean
+  brunch: boolean
+  diet: string
 }
 
 interface State {
   loading: boolean
-  user: User | null
+  user: User | null | undefined
 }
 
 const state: State = {
   loading: true,
-  user: null,
+  user: undefined
 }
 
 const options: StoreOptions<State> = {
@@ -22,12 +29,11 @@ const options: StoreOptions<State> = {
   mutations: {
     setUser: (state, value) => {
       state.user = value
-      state.loading = false
+      setTimeout(() => (state.loading = false), 200)
     },
   },
   getters: {
-    loggedIn: (state) => !!state.user,
-    userRef: (state) => state.user && db.collection('users').doc(state.user.id)
+    userRef: (state) => state.user && db.collection('users').doc(state.user.id),
   },
 }
 

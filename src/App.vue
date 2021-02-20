@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="flex flex-col min-h-screen bg-dark">
     <div v-if="loading" class="flex justify-center items-center h-screen">
-      Loading
+      <Loader color="#a37b55" />
     </div>
     <template v-else>
       <Header v-if="$route.path !== '/'" />
@@ -11,43 +11,41 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import Header from "./components/Header.vue"
-import { auth } from "./config/firebase"
+import Vue from 'vue'
+import Header from './components/Header.vue'
+import { auth, db } from './config/firebase'
 
 export default Vue.extend({
   components: { Header },
   computed: {
-    loggedIn() {
-      return this.$store.getters.loggedIn
+    user() {
+      return this.$store.state.user
     },
     loading() {
       return this.$store.state.loading
     },
+    mairie() {
+      return this.$store.state.user?.mairie
+    },
   },
   watch: {
-    loggedIn() {
-      this.handleLoggedIn()
-    },
-    loading() {
-      this.handleLoggedIn()
+    user(val) {
       // @ts-ignore
-      if (this.$route.path === "/") this.$router.replace("home")
+      const { path } = this.$route
+      // @ts-ignore
+      if (path === '/' && !val) return
+      // @ts-ignore
+      if (path !== '/' && !val) return this.$router.replace('/')
+      // @ts-ignore
+      if (path === '/' || (path ==='/mairie' && !this.mairie)) this.$router.replace('/home')
     },
   },
-  created() {
+  mounted() {
     auth.onAuthStateChanged(async (user) => {
-      this.$store.commit(
-        "setUser",
-        user ? { email: user.email, displayName: user.displayName, id: user.uid } : null
-      )
+      if (!user) return this.$store.commit('setUser', null)
+      const res = await db.collection('users').doc(user.uid).get()
+      this.$store.commit('setUser', { email: user.email, id: user.uid, ...res?.data() })
     })
-  },
-  methods: {
-    handleLoggedIn() {
-      // @ts-ignore
-      if (!this.loggedIn) this.$router.replace("/")
-    },
   },
 })
 </script>
