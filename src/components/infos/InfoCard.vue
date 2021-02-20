@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <g-image :src="getImage" class="h-full w-full object-cover card" />
+    <g-image :src="getImage" immediate class="h-full w-full object-cover card" />
     <div
       class="sm:opacity-0 sm:hover:opacity-100 flex flex-col justify-center items-center absolute bg-dark bg-opacity-50 h-full w-full top-0"
     >
