@@ -6,10 +6,7 @@
       <h3 class="text-xl">Avant le 15 avril 2021</h3>
     </div>
     <div class="w-screen sm:w-1/2 flex justify-center">
-      <div v-if="loading" class="flex justify-center items-center">
-        <Loader color="#a37b55" />
-      </div>
-      <div class="flex flex-col justify-center items-start px-20 sm:px-10" v-else>
+      <div class="flex flex-col justify-center items-start px-20 sm:px-10">
         <template v-if="underEdit">
           <label
             ><input type="radio" :value="true" v-model="attends" class="mr-1" />seront ravis d'être à vos côtés</label
@@ -74,20 +71,23 @@ import { deleteField } from '../config/firebase'
 export default Vue.extend({
   components: { FormButton },
   data() {
+    const { attends, adults, children, dinner, brunch, diet } = this.$store.state.user
     return {
-      attends: undefined,
-      adults: 1,
-      children: 0,
-      dinner: true,
-      brunch: true,
-      diet: '',
-      underEdit: true,
+      attends: attends || undefined,
+      adults: adults || 1,
+      children: children || 0,
+      dinner: dinner || true,
+      brunch: brunch || true,
+      diet: diet || '',
+      underEdit: typeof attends === 'undefined' || false,
       error: false,
       pending: false,
-      loading: true,
     }
   },
   computed: {
+    user() {
+      return this.$store.state.user
+    },
     userRef() {
       return this.$store.getters.userRef
     },
@@ -99,27 +99,6 @@ export default Vue.extend({
       // @ts-ignore
       return this.adults + this.children === 1
     },
-  },
-  async mounted() {
-    try {
-      const doc = await this.userRef.get()
-      this.loading = false
-      if (!doc.exists) return
-      const { attends, adults, children, dinner, brunch, diet } = doc.data()
-      if (typeof attends === 'undefined') return
-      this.underEdit = false
-      this.attends = attends
-      if (!attends) return
-      this.adults = adults
-      this.children = children
-      this.dinner = dinner
-      this.brunch = brunch
-      this.diet = diet
-    } catch (e) {
-      console.log(e)
-      this.loading = false
-      this.error = true
-    }
   },
   methods: {
     async submit() {
