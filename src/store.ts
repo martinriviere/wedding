@@ -3,8 +3,15 @@ import { db } from './config/firebase'
 
 interface User {
   email: string
-  displayName: string
   id: string
+  mairie: boolean
+  vip: boolean
+  attends: boolean
+  adults: number
+  children: number
+  dinner: boolean
+  brunch: boolean
+  diet: string
 }
 
 interface State {
@@ -27,7 +34,8 @@ const options: StoreOptions<State> = {
   },
   getters: {
     loggedIn: (state) => !!state.user,
-    userRef: (state) => state.user && db.collection('users').doc(state.user.id)
+    userRef: (state) => state.user && db.collection('users').doc(state.user.id),
+    mairie: (state) => state.user?.mairie
   },
 }
 

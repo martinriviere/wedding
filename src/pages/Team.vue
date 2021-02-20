@@ -28,6 +28,7 @@
     <Grid>
       <GridCard v-for="guy in $page.team.edges.map((e) => e.node)" :key="guy.id" :id="guy.id" :picture="guy.picture">
         <div class="flex flex-col">
+          <div class="text-white mb-4" v-html="guy.name" />
           <div class="text-white mb-4" v-html="guy.content" />
           <div class="text-white mb-4">{{ guy.telephone }}</div>
           <a :href="`mailto:${guy.mail}`" class="text-white" target="_blank">E-mail</a>

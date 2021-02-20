@@ -30,7 +30,7 @@
 import Vue from 'vue'
 import { auth } from '../config/firebase'
 
-const pages: { label: string; link: string }[] = [
+const publicPages = [
   {
     label: 'Accueil',
     link: '/home',
@@ -47,24 +47,26 @@ const pages: { label: string; link: string }[] = [
     label: 'Team',
     link: '/team',
   },
-  {
-    label: 'Photos',
-    link: '/pictures',
-  },
-  {
-    label: 'Mairie',
-    link: '/mairie',
-  },
 ]
 
 export default Vue.extend({
+  components: {},
   props: {
     mobileVisible: Boolean,
   },
-  data() {
-    return {
-      pages,
-    }
+  computed: {
+    pages() {
+      const pages = publicPages
+      console.log(this.$store.getters)
+      if (this.$store.getters.mairie) {
+        pages.push({
+          label: 'Mairie',
+          link: '/mairie',
+        })
+      }
+      console.log(pages)
+      return pages
+    },
   },
   methods: {
     logOut() {
