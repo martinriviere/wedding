@@ -10,7 +10,7 @@
         <FontAwesome :icon="['fas', 'times']" />
       </div>
       <g-link
-        v-for="item in pages"
+        v-for="item in filteredPages"
         :to="item.link"
         @click="$emit('close')"
         :key="item.label"
@@ -30,7 +30,7 @@
 import Vue from 'vue'
 import { auth } from '../config/firebase'
 
-const publicPages = [
+const pages = [
   {
     label: 'Accueil',
     link: '/home',
@@ -47,6 +47,11 @@ const publicPages = [
     label: 'Team',
     link: '/team',
   },
+  {
+    label: 'Mairie',
+    link: '/mairie',
+    protected: 'mairie',
+  },
 ]
 
 export default Vue.extend({
@@ -55,17 +60,11 @@ export default Vue.extend({
     mobileVisible: Boolean,
   },
   computed: {
-    pages() {
-      const pages = publicPages
-      console.log(this.$store.getters)
-      if (this.$store.getters.mairie) {
-        pages.push({
-          label: 'Mairie',
-          link: '/mairie',
-        })
-      }
-      console.log(pages)
-      return pages
+    filteredPages() {
+      return pages.filter(
+        // @ts-ignore
+        (page) => !page.protected || (this.$store.state.user && this.$store.state.user[page.protected]),
+      )
     },
   },
   methods: {
