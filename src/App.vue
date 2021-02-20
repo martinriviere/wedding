@@ -11,9 +11,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import Header from "./components/Header.vue"
-import { auth } from "./config/firebase"
+import Vue from 'vue'
+import Header from './components/Header.vue'
+import { auth, db } from './config/firebase'
 
 export default Vue.extend({
   components: { Header },
@@ -32,21 +32,20 @@ export default Vue.extend({
     loading() {
       this.handleLoggedIn()
       // @ts-ignore
-      if (this.$route.path === "/") this.$router.replace("home")
+      if (this.$route.path === '/') this.$router.replace('home')
     },
   },
   created() {
     auth.onAuthStateChanged(async (user) => {
-      this.$store.commit(
-        "setUser",
-        user ? { email: user.email, displayName: user.displayName, id: user.uid } : null
-      )
+      if (!user) return
+      const res = await db.collection('users').doc(user.uid).get()
+      this.$store.commit('setUser', { email: user.email, id: user.uid, ...res?.data() })
     })
   },
   methods: {
     handleLoggedIn() {
       // @ts-ignore
-      if (!this.loggedIn) this.$router.replace("/")
+      if (!this.loggedIn) this.$router.replace('/')
     },
   },
 })
