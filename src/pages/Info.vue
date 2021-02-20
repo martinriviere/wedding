@@ -3,7 +3,7 @@
     <div class="bg-white">
       <div class="container mx-auto flex flex-col sm:flex-row">
         <div>
-          <g-image src="../assets/img/infos/domaine.jpg" alt="Domaine" class="h-full w-full object-cover" />
+          <g-image src="../assets/img/infos/domaine.jpg" alt="Domaine" height="400" width="600" />
         </div>
         <div class="p-5 self-center">
           <SectionTitle class="mb-2 sm:mb-5">

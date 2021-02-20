@@ -60,7 +60,7 @@
           </template>
           <FormButton label="Modifier" @click="underEdit = true" />
         </template>
-        <div v-if="error">Il y a eu une erreur, merci de réessayer plus tard</div>
+        <div v-if="error" class="mt-4">Il y a eu une erreur, merci de réessayer plus tard</div>
       </div>
     </div>
   </div>

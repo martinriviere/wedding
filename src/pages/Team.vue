@@ -2,8 +2,10 @@
   <div>
     <div class="bg-white w-full mb-1 md:mb-3">
       <div class="container mx-auto">
-        <div class="flex flex-col sm:flex-row mb-4">
-          <g-image src="../assets/img/team/us.jpg" class="hidden sm:block w-screen sm:w-1/2" />
+        <div class="flex flex-col sm:flex-row items-center">
+          <div class="hidden sm:block w-screen sm:w-1/2">
+            <g-image src="../assets/img/team/us.jpg" height="500" width="500" />
+          </div>
           <div class="w-screen sm:w-1/2 p-5 self-center relative">
             <SectionTitle class="mb-2 sm:mb-5">
               Présentation de la team mariés
@@ -15,13 +17,11 @@
             <p>
               Vous trouverez toute l’équipe ci-après avec leurs coordonnées.
             </p>
+            <SectionTitle class="my-2 sm:my-5">
+              {{ $page.description.name }}
+            </SectionTitle>
+            <div v-html="$page.description.content" />
           </div>
-        </div>
-        <div class="p-5">
-          <SectionTitle class="mb-2 sm:mb-5">
-            {{ $page.description.name }}
-          </SectionTitle>
-          <div v-html="$page.description.content" />
         </div>
       </div>
     </div>
