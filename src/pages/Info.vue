@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <div class="container mx-auto flex flex-col items-center py-5">
+    <div class="container mx-auto flex flex-col items-center pt-5">
       <SectionTitle class="mb-2 sm:mb-5">
         Informations aux invités
       </SectionTitle>
