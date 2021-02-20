@@ -1,22 +1,24 @@
 <template>
-  <div id="app" class="flex flex-col min-h-screen bg-dark">
+  <div id="app" class="bg-dark">
     <div v-if="loading" class="flex justify-center items-center h-screen">
       <Loader color="#a37b55" />
     </div>
-    <template v-else>
+    <div v-else class="relative flex flex-col min-h-screen pb-12">
       <Header v-if="$route.path !== '/'" />
       <router-view />
-    </template>
+      <Footer v-if="$route.path !== '/'" />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 import { auth, db } from './config/firebase'
 
 export default Vue.extend({
-  components: { Header },
+  components: { Header, Footer },
   computed: {
     user() {
       return this.$store.state.user
