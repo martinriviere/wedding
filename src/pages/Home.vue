@@ -19,9 +19,10 @@
         </div>
       </div>
     </div>
-    <div class="flower bg-50% sm:bg-30% bg-no-repeat">
+    <div class="relative">
+      <div class="absolute inset-0 bg-flower flower bg-50% sm:bg-30% bg-no-repeat opacity-50" />
       <div class="container mx-auto flex flex-col sm:flex-row items-center">
-        <div class="flex flex-col items-center text-center p-5 sm:w-1/2">
+        <div class="flex flex-col items-center text-center p-5 sm:w-1/2 relative">
           <SectionTitle class="mb-2 sm:mb-5">
             Une vraie histoire d'amour
           </SectionTitle>
@@ -81,7 +82,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .flower {
-  background-image: url('../assets/img/flower.png');
   background-position: left -20px top -20px;
 }
 </style>

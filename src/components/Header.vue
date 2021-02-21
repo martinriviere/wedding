@@ -1,6 +1,6 @@
 <template>
-  <div class="flex items-center justify-between px-4 py-2 sm:px-10 sm:py-5">
-    <g-link to="/home"><g-image src="../assets/img/logo.png" id="logo" alt="Logo" width="150"/></g-link>
+  <div class="flex items-center justify-between px-4 py-2 sm:px-10">
+    <g-link to="/home"><g-image src="../assets/img/logo.png" id="logo" alt="Logo"/></g-link>
     <CountDown class="text-sm sm:text-lg text-gray-400 text-center mx-5 flex-1" />
     <div
       v-show="mobileNavBarVisible"

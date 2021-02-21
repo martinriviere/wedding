@@ -1,5 +1,5 @@
 <template>
-  <h2 class="text-2xl text-gold font-semibold uppercase font-arapey">
+  <h2 class="text-2xl text-gold uppercase font-hairline">
     <slot />
   </h2>
 </template>
