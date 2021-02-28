@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs'
 import papa from 'papaparse'
 import firebase from 'firebase/app/dist/index.cjs.js'
+// import firebase from 'firebase/app'
 import 'firebase/auth/dist/index.cjs.js'
 import 'firebase/firestore/dist/index.node.cjs.js'
 
@@ -25,7 +26,7 @@ const func = async () => {
   for (let foo of data) {
     const { displayName, login, password, vip, mairie } = foo
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(login + '@manonetmartin.fr', password)
+      const { user } = await auth.createUserWithEmailAndPassword(login + '@manonetmartin.fr', `pass${password}word`)
       console.log(`Created user ${user.uid} for ${displayName}`)
       await user.updateProfile({ displayName })
       console.log(`Created displayName for ${displayName}`)
@@ -39,6 +40,10 @@ const func = async () => {
         })
       console.log(`Successfully added ${displayName} to database`)
     } catch (e) {
+      if (e.code === 'auth/email-already-in-use') {
+        console.log(`User ${displayName} already exists`)
+        continue
+      }
       console.log(e)
       process.exit(1)
     }
