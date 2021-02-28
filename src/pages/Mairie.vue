@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-grey-dark py-5">
+    <div class="bg-fern bg-left p-8">
       <SectionTitle class="text-center">
         Logements autour de chez nous
       </SectionTitle>
