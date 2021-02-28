@@ -40,7 +40,7 @@ export default Vue.extend({
       try {
         await auth.signInWithEmailAndPassword(
           `${this.email}@manonetmartin.fr`,
-          this.password
+          `pass${this.password}word`
         )
         // @ts-ignore
         this.$router.replace("/home")
