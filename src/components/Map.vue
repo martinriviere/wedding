@@ -1,49 +1,57 @@
 <template>
-  <div class="map-container">
-    <LMap :zoom="zoom" :center="center" :options="mapOptions">
-      <LTileLayer :url="url" :options="layerOptions" />
-      <LMarker v-for="marker in importantPlaces" :icon="importantIcon" :lat-lng="marker.latLng" :key="marker.popup">
-        <LPopup>
-          <a :href="marker.link" :style="!marker.link && 'color: black;'" target="_blank">{{ marker.text }}</a>
-        </LPopup>
-      </LMarker>
-      <LMarker v-for="marker in markers" :lat-lng="marker.latLng" :key="marker.popup">
-        <LPopup>
-          <a :href="marker.link" :style="!marker.link && 'color: black;'" target="_blank">{{ marker.text }}</a>
-        </LPopup>
-      </LMarker>
-    </LMap>
-  </div>
+  <ClientOnly>
+    <div class="map-container">
+      <LMap :zoom="zoom" :center="center" :options="mapOptions">
+        <LTileLayer :url="url" :options="layerOptions" />
+        <LMarker v-for="marker in importantPlaces" :icon="importantIcon" :lat-lng="marker.latLng" :key="marker.popup">
+          <LPopup>
+            <a :href="marker.link" :style="!marker.link && 'color: black;'" target="_blank">{{ marker.text }}</a>
+          </LPopup>
+        </LMarker>
+        <LMarker v-for="marker in markers" :lat-lng="marker.latLng" :key="marker.popup">
+          <LPopup>
+            <a :href="marker.link" :style="!marker.link && 'color: black;'" target="_blank">{{ marker.text }}</a>
+          </LPopup>
+        </LMarker>
+      </LMap>
+    </div>
+  </ClientOnly>
 </template>
 
 <script lang="ts">
 import Vue, { PropType } from 'vue'
-import { LMap, LTileLayer, LMarker, LPopup } from 'vue2-leaflet'
-// @ts-ignore
-import { Icon, LatLngLiteral } from 'leaflet'
 import { Marker } from '../utils/latLng'
 
-type D = Icon.Default & {
-  _getIconUrl?: string
-}
+// @ts-ignore
+const isClient = process.isClient
+let Icon: { new(arg0: { iconRetinaUrl: any; iconUrl: any; iconSize: number[] }): any; Default: { prototype: any; mergeOptions: (arg0: { iconRetinaUrl: any; iconUrl: any; iconSize: number[]; shadowUrl: null }) => void } }
 
-delete (Icon.Default.prototype as D)._getIconUrl
-Icon.Default.mergeOptions({
-  iconRetinaUrl: require('../assets/img/map/blue-icon-2x.png'),
-  iconUrl: require('../assets/img/map/blue-icon.png'),
-  iconSize: [35, 35],
-  shadowUrl: null,
-})
+if (isClient) {
+  Icon = require('leaflet').Icon
+
+  // @ts-ignore
+  type D = Icon.Default & {
+    _getIconUrl?: string
+  }
+
+  delete (Icon.Default.prototype as D)._getIconUrl
+  Icon.Default.mergeOptions({
+    iconRetinaUrl: require('../assets/img/map/blue-icon-2x.png'),
+    iconUrl: require('../assets/img/map/blue-icon.png'),
+    iconSize: [35, 35],
+    shadowUrl: null,
+  })
+}
 
 export default Vue.extend({
   components: {
-    LMap,
-    LTileLayer,
-    LMarker,
-    LPopup,
+    LMap: () => import('vue2-leaflet').then((m) => m.LMap),
+    LTileLayer: () => import('vue2-leaflet').then((m) => m.LTileLayer),
+    LMarker: () => import('vue2-leaflet').then((m) => m.LMarker),
+    LPopup: () => import('vue2-leaflet').then((m) => m.LPopup),
   },
   props: {
-    center: Object as PropType<LatLngLiteral>,
+    center: Object,
     importantPlaces: Array as PropType<Marker[]>,
     markers: Array as PropType<Marker[]>,
     zoom: { type: Number, default: 10 },

@@ -89,6 +89,7 @@ export default Vue.extend({
   },
   methods: {
     logOut() {
+      if (!auth) return
       auth.signOut()
     },
   },
