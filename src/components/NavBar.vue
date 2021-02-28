@@ -9,16 +9,22 @@
       <div class="text-white text-3xl ml-auto mb-5 lg:hidden" @click="$emit('close')">
         <FontAwesome :icon="['fas', 'times']" />
       </div>
-      <g-link
-        v-for="item in filteredPages"
-        :to="item.link"
-        @click="$emit('close')"
-        :key="item.label"
-        class="my-1 lg:my-0 lg:mr-5 text-white text-xl lg:text-base"
-        active-class="text-grey-light"
-      >
-        <span @click="$emit('close')">{{ item.label }}</span>
-      </g-link>
+      <div v-for="item in filteredPages" :key="item.label" class="group my-1 lg:my-0 lg:mr-5 text-white">
+        <g-link :to="item.link" class="text-xl lg:text-base" active-class="text-grey-light">
+          <span @click="$emit('close')">{{ item.label }}</span>
+        </g-link>
+        <div class="flex flex-col ml-3 lg:hidden lg:group-hover:flex lg:rounded lg:ml-0 lg:p-3 lg:absolute bg-dark">
+          <g-link
+            v-for="sub in item.submenus"
+            :to="sub.link"
+            :key="sub.label"
+            class="my-1 lg:my-0 lg:mr-5 text-white lg:text-base"
+            active-class="text-grey-light"
+          >
+            <span @click="$emit('close')">{{ sub.label }}</span>
+          </g-link>
+        </div>
+      </div>
       <span class="my-1 lg:my-0 lg:mr-5 text-white text-xl lg:text-base cursor-pointer" @click="logOut"
         >Déconnexion</span
       >
@@ -38,6 +44,20 @@ const pages = [
   {
     label: 'Informations',
     link: '/info',
+    submenus: [
+      {
+        label: 'Transport',
+        link: '/transports',
+      },
+      {
+        label: 'Activités',
+        link: '/activities',
+      },
+      {
+        label: 'Hébergement',
+        link: '/accomodation',
+      },
+    ],
   },
   {
     label: 'RSVP',
