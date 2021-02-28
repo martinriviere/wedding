@@ -33,7 +33,7 @@ const options: StoreOptions<State> = {
     },
   },
   getters: {
-    userRef: (state) => state.user && db.collection('users').doc(state.user.id),
+    userRef: (state) => state.user && db?.collection('users').doc(state.user.id),
   },
 }
 

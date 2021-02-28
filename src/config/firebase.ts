@@ -12,8 +12,15 @@ const config = {
   appId: "1:267326677449:web:46f977551a3e0cc9c6c818",
 }
 
-firebase.initializeApp(config)
+// @ts-ignore
+const isClient = process.isClient
 
-export const auth = firebase.auth()
-export const db = firebase.firestore()
+if (isClient) {
+  firebase.initializeApp(config)
+}
+
+
+
+export const auth = isClient ? firebase.auth() : null
+export const db = isClient ? firebase.firestore() : null
 export const deleteField = firebase.firestore.FieldValue.delete
