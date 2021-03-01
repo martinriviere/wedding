@@ -57,7 +57,7 @@ export default Vue.extend({
           title: 'Transports',
           description: "Comment s'y rendre ?",
           img: 'infos/transport.jpg',
-          link: '/transports',
+          link: '/transport',
         },
         {
           title: 'Activités',

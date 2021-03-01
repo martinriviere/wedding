@@ -16,7 +16,12 @@
           class="my-1 px-2 py-1 bg-dark rounded text-white"
           placeholder="Mot de passe"
         />
-        <input type="submit" value="Connexion" class="my-1 bg-dark rounded text-gold" />
+        <FormButton
+          label="Connexion"
+          :loading="loading"
+          :disabled="disabled"
+          buttonClass="my-1 bg-dark rounded text-gold"
+        />
       </form>
       <p v-if="error" class="text-white text-center">{{ error }}</p>
     </div>
@@ -35,16 +40,33 @@ export default Vue.extend({
       email: '',
       password: '',
       error: '',
+      loading: false,
     }
+  },
+  computed: {
+    disabled() {
+      // @ts-ignore
+      return !this.email || !this.password
+    },
+  },
+  watch: {
+    email() {
+      this.error = ''
+    },
+    password() {
+      this.error = ''
+    },
   },
   methods: {
     async login() {
       if (!auth) return
       try {
+        this.loading = true
         await auth.signInWithEmailAndPassword(`${this.email}@manonetmartin.fr`, `pass${this.password}word`)
         // @ts-ignore
         this.$router.replace('/home')
       } catch (e) {
+        this.loading = false
         if (['auth/user-not-found', 'auth/wrong-password'].includes(e.code))
           this.error = "Nom d'utilisateur ou mot de passe incorrect"
       }
