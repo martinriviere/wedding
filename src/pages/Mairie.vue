@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="relative">
-      <div class="absolute inset-0 bg-flower flower bg-50% sm:bg-30% bg-no-repeat opacity-50" />
+      <div class="absolute inset-0 background-flower flower bg-50% sm:bg-30% bg-no-repeat opacity-50" />
       <div class="container mx-auto flex flex-col sm:flex-row items-center">
         <div class="flex flex-col items-center text-center p-5 sm:w-1/2">
           <SectionTitle class="mb-2 sm:mb-5">
@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-fern bg-left p-8">
+    <div class="background-fern bg-left p-8">
       <SectionTitle class="text-center">
         Logements autour de chez nous
       </SectionTitle>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-fern bg-left w-full p-8 flex flex-col items-center">
+    <div class="background-fern bg-left w-full p-8 flex flex-col items-center">
       <SectionTitle>
         Hébergement
       </SectionTitle>
