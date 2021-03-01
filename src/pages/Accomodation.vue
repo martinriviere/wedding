@@ -4,8 +4,8 @@
       <SectionTitle>
         Hébergement
       </SectionTitle>
-      <h3 class="text-white">
-        Nous vous avons concocté une liste de logements aux alentours du domaine de notre mariage.
+      <h3 class="text-white text-center">
+        Nous vous avons concocté une liste de logements aux alentours du domaine.
       </h3>
     </div>
     <div class="bg-white py-1 md:py-3">

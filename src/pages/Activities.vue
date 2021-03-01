@@ -4,7 +4,7 @@
       <SectionTitle>
         Activités
       </SectionTitle>
-      <h3 class="text-white">
+      <h3 class="text-white text-center">
         Que faire sur place et aux alentours ?
       </h3>
     </div>

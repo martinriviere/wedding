@@ -47,7 +47,7 @@ const pages = [
     submenus: [
       {
         label: 'Transport',
-        link: '/transports',
+        link: '/transport',
       },
       {
         label: 'Activités',

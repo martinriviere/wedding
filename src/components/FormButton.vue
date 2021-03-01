@@ -3,7 +3,7 @@
     @click="$emit('click')"
     :disabled="loading || disabled"
     :class="[
-      'mt-3 py-1 px-3 rounded self-center bg-gold text-white flex items-center',
+      buttonClass || 'mt-3 py-1 px-3 rounded self-center bg-gold text-white flex items-center',
       { 'opacity-50': loading || disabled },
     ]"
   >
@@ -19,6 +19,7 @@ export default Vue.extend({
     label: String,
     loading: Boolean,
     disabled: Boolean,
+    buttonClass: String,
   },
 })
 </script>
