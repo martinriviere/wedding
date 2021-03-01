@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white flex flex-grow flex-wrap">
     <div class="flex flex-col w-screen sm:w-1/2 items-center justify-center relative">
-      <div class="bg-flower bg-cover absolute inset-0 opacity-25" />
+      <div class="background-flower bg-cover absolute inset-0 opacity-25" />
       <SectionTitle>RSVP</SectionTitle>
       <h3 class="text-xl">Avant le 15 avril 2021</h3>
     </div>

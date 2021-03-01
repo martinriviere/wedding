@@ -6,10 +6,6 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
-      backgroundImage: (theme) => ({
-        fern: "url('/assets/img/fern.jpg')",
-        flower: "url('/assets/img/flower.png')",
-      }),
       colors: {
         dark: '#414847',
         green: '#84adaa',

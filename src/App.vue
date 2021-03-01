@@ -57,4 +57,12 @@ export default Vue.extend({
 body {
   font-family: Roboto;
 }
+
+.background-flower {
+  background-image: url('./assets/img/flower.png');
+}
+
+.background-fern {
+  background-image: url('./assets/img/fern.jpg');
+}
 </style>
