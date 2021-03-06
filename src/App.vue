@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-dark">
+  <div id="app" class="bg-dark text-grey-dark">
     <div v-if="loading" class="flex justify-center items-center h-screen">
       <Loader color="#a37b55" />
     </div>

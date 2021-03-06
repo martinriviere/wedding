@@ -8,7 +8,7 @@
         Que faire sur place et aux alentours ?
       </h3>
     </div>
-    <div class="bg-white py-1 md:py-3">
+    <div class="py-1 md:py-3">
       <Grid>
         <GridCard
           v-for="activity in $page.activities.edges.map((e) => e.node)"

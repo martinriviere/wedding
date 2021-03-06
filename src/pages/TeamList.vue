@@ -1,5 +1,5 @@
 <template>
-  <List>
+  <List backButtonLink="/team">
     <ListTile
       v-for="guy in $page.team.edges.map((e) => e.node)"
       :key="guy.id"

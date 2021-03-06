@@ -12,7 +12,7 @@
           <p class="my-4 text-2xl sm:text-4xl font-haviland">10 Juillet 2021</p>
           <p>
             Nous avons créé ce site dédié à notre mariage pour que vous ayez accès à toutes les informations
-            pratiques<br />
+            pratiques.<br />
             Laissez-vous porter par la visite pour trouver ce qu'il vous faut pour profiter pleinement de ce fabuleux
             évènement avec nous !
           </p>
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-grey-dark py-5">
+    <div class="background-fern bg-left py-5">
       <div class="container mx-auto flex flex-col items-center">
         <SectionTitle class="mb-2 sm:mb-5">
           Contactez nous

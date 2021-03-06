@@ -2,23 +2,32 @@
   <div
     :class="[
       mobileVisible ? 'right-0' : '-right-full',
-      'bg-dark fixed lg:static top-0 bottom-0 transition-all duration-500 ease-out z-10',
+      'bg-dark lg:bg-transparent fixed lg:static top-0 bottom-0 transition-all duration-500 ease-out z-10',
     ]"
   >
     <div class="flex flex-col lg:flex-row lg:items-center px-4 py-2 lg:py-5">
       <div class="text-white text-3xl ml-auto mb-5 lg:hidden" @click="$emit('close')">
         <FontAwesome :icon="['fas', 'times']" />
       </div>
-      <div v-for="item in filteredPages" :key="item.label" class="group my-1 lg:my-0 lg:mr-5 text-white">
+      <div
+        v-for="item in filteredPages"
+        :key="item.label"
+        :class="['group my-1 lg:my-0 lg:mr-5', isSticky ? 'text-grey-dark' : 'text-white']"
+      >
         <g-link :to="item.link" class="text-xl lg:text-base" active-class="text-grey-light">
           <span @click="$emit('close')">{{ item.label }}</span>
         </g-link>
-        <div class="flex flex-col ml-3 lg:hidden lg:group-hover:flex lg:rounded lg:ml-0 lg:p-3 lg:absolute bg-dark">
+        <div
+          :class="[
+            'flex flex-col ml-3 lg:hidden lg:group-hover:flex lg:rounded lg:ml-0 lg:p-3 lg:absolute',
+            isSticky ? 'bg-white text-grey-dark' : 'bg-dark text-white',
+          ]"
+        >
           <g-link
             v-for="sub in item.submenus"
             :to="sub.link"
             :key="sub.label"
-            class="my-1 lg:my-0 lg:mr-5 text-white lg:text-base"
+            class="my-1 lg:my-0 lg:mr-5 lg:text-base"
             active-class="text-grey-light"
           >
             <span @click="$emit('close')">{{ sub.label }}</span>
@@ -78,6 +87,7 @@ export default Vue.extend({
   components: {},
   props: {
     mobileVisible: Boolean,
+    isSticky: Boolean,
   },
   computed: {
     filteredPages() {
