@@ -1,10 +1,10 @@
 <template>
   <div class="absolute h-full p-4 sm:hidden">
-    <g-link :to="link">
-      <div class="bg-white text-dark h-10 w-10 rounded-full flex justify-center items-center sticky sticky-button">
-        <FontAwesome :icon="['fas', 'chevron-left']" size="lg"/>
-      </div>
-    </g-link>
+    <div class="bg-white text-dark h-10 w-10 rounded-full flex justify-center items-center sticky sticky-button">
+      <g-link :to="link">
+        <FontAwesome :icon="['fas', 'chevron-left']" size="lg" />
+      </g-link>
+    </div>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-  .sticky-button {
-    top: calc(1rem + 58.55px)
-  }
+.sticky-button {
+  top: calc(1rem + 58.55px);
+}
 </style>

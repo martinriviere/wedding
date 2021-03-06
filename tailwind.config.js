@@ -28,6 +28,9 @@ module.exports = {
       inset: {
         '-full': '-100%',
       },
+      zIndex: {
+        2000: 2000
+      }
     },
   },
   variants: {
