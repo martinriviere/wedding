@@ -23,6 +23,16 @@
   </div>
 </template>
 
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  mounted() {
+    // @ts-ignore
+    console.log(this.$page.activities.edges.map(e => e.node))
+  }
+})
+</script>
+
 <page-query>
 query {
   activities: allActivity(sortBy: "id", order: ASC) {
