@@ -1083,6 +1083,36 @@
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.4.1.tgz#600f2275ff54739ad5ac0102f1467b8963cd5f71"
   integrity sha512-0yPjzuzGMkW1GkrC8yWsiN7vt1OzkMIi9HgxRmKREZl2wnNPOKo/yScTjXf/O57HM8dltqxPF6jlNLFVtc2qdw==
 
+"@fontsource/arapey@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/arapey/-/arapey-4.2.2.tgz#bebab62ba4496e8cf8a37e4210628314b39c30f4"
+  integrity sha512-aru71v39fgRItgA/b7OQmrUyghTNVMbXBBwnG+dJgCjUPOTmca8dmwFB1aTkWjvDvxSP21muz0kzMyZx84ik8A==
+
+"@fontsource/b612@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/b612/-/b612-4.2.2.tgz#d813e7212d844f1a53196025b301ce07e798e032"
+  integrity sha512-gON4jRVWoCyf3Z1oN37vYNwIAak0tjq8FwyHo4VXNpTugPM8o4OMouXdmY3ILorXmlHUkX19UyP/x0MvgI0D9g==
+
+"@fontsource/libre-baskerville@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/libre-baskerville/-/libre-baskerville-4.2.2.tgz#e49a090f35c156f8b2b66f85d7718f335c38f390"
+  integrity sha512-EKyL+tq3xm2gzOgZIYYDRx0KRetV4d+Kp9QU5A4XNbG+EjQoZf81BkXJ8m/T156uQ4OAM5wlBE8ukwn7hMgSww==
+
+"@fontsource/mr-de-haviland@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/mr-de-haviland/-/mr-de-haviland-4.2.2.tgz#e76f2308deab45f1f760eac89380a375b640a185"
+  integrity sha512-ryv2Q6M3DGOIWfLQbb2JuyjhkZcsgCmNSCJAi3uQMUJgfwhiK16bycAjC1kdNxlm4uSe+GNu7zzNkEFREzIZOg==
+
+"@fontsource/pt-sans@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/pt-sans/-/pt-sans-4.2.2.tgz#0960ef7d465f728eb5b8c6714798af07f976a0dd"
+  integrity sha512-QTxuO0OY0kF230kD2VzoZPpwS18Ezm0FvQVUXTBe6SxtcqUGEXMRrWugDnv3vyqSqIL3lEQjE/Sf8EaYcR2Z3g==
+
+"@fontsource/roboto@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-4.2.2.tgz#39b87680b25915539e445cc6e0fac99e1a81f58b"
+  integrity sha512-VzYWCdqjrepaT7dezuaTZXKaW1L+f5FSp7DGxMqTrf81OTzh9xpKIpr8lgjPg2ZNwiT8rnU++mJ4hojsCnOoqw==
+
 "@fortawesome/fontawesome-common-types@^0.2.34":
   version "0.2.34"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.34.tgz#0a8c348bb23b7b760030f5b1d912e582be4ec915"
@@ -4519,26 +4549,6 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
-
-fontsource-arapey@^3.0.9:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/fontsource-arapey/-/fontsource-arapey-3.1.5.tgz#d5eb353fa3f5b310ea66349a0ad6a6027511f1eb"
-  integrity sha512-hPF2MAgdpA7hXlvV3R3eSrSd9II/6g2MR5JNRIRcR8xkGFpdLh7exBkoyILono481HblEJ491IOmUSRAAeJM/A==
-
-fontsource-libre-baskerville@^3.0.9:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/fontsource-libre-baskerville/-/fontsource-libre-baskerville-3.1.5.tgz#3821e39bc2e74ea7046673285d8ef2b4b021d939"
-  integrity sha512-eQ4uEGrGStiQuGzeawKFfvOi039wLthZi1FVZ0pzWnCuRMaW98S+0bdHz+r8zY7FsBmboN+BZ0pe1gHunS+2OA==
-
-fontsource-mr-de-haviland@^3.0.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/fontsource-mr-de-haviland/-/fontsource-mr-de-haviland-3.1.5.tgz#8c5186ca7469dbae17b0a25722f985417148494a"
-  integrity sha512-yajSLWbngf+u5vgK3jOics1xHLrwnLFRE+zvDwyEnEbzWJ+WXOxzWYr4u4utgIWShyTzvumr350pp2IaHjzzuw==
-
-fontsource-roboto@^3.0.3:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/fontsource-roboto/-/fontsource-roboto-3.1.5.tgz#d5da8bac968db7911e20fd2fb6c227d405f86cba"
-  integrity sha512-DXSE7/F/6AsKcRJX4VSi3bGrEx0xiaqieeV2W7UH9JFk6tt1U86NoWwy2iNPoUzGtEyQsasilwhTrMJm7wM+Ew==
 
 for-each@^0.3.3:
   version "0.3.3"

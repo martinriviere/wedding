@@ -88,6 +88,12 @@ export default Vue.extend({
           4.784704833677451,
           'https://lyon-sud-saint-genis-laval.kyriad.com/fr-fr/',
         ),
+        generateMarker(
+          'Divers Airbnb dans le coin',
+          45.65137145717374,
+          4.787947969718062,
+          'https://www.airbnb.fr/wishlists/895354652',
+        ),
       ],
       importantPlaces: [
         generateMarker('Chez nous, 399A rue de la Brosse, Charly', 45.65409953864006, 4.787509695158173),

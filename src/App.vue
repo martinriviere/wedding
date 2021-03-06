@@ -55,7 +55,7 @@ export default Vue.extend({
 
 <style lang="scss">
 body {
-  font-family: Roboto;
+  font-family: 'PT Sans';
 }
 
 .background-flower {

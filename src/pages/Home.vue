@@ -74,7 +74,14 @@ export default Vue.extend({
     return {
       center: { lat: 44.729471, lng: -0.421311 },
       // markers: [{ popup: 'Château Sentout, Tabanac', latLng: { lat: 44.729471, lng: -0.421311 } }],
-      markers: [generateMarker('Château Sentout, Tabanac', 44.72947056817649, -0.42128920438841)],
+      markers: [
+        generateMarker(
+          'Château Sentout, Tabanac',
+          44.72947056817649,
+          -0.42128920438841,
+          'https://goo.gl/maps/sDUfY7179oJtqP326',
+        ),
+      ],
     }
   },
 })
