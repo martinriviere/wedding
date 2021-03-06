@@ -5,7 +5,7 @@
       'bg-dark lg:bg-transparent fixed lg:static top-0 bottom-0 transition-all duration-500 ease-out z-10',
     ]"
   >
-    <div class="flex flex-col lg:flex-row lg:items-center px-4 py-2 lg:py-5">
+    <div class="flex flex-col lg:flex-row lg:items-center px-4 py-2">
       <div class="text-white text-3xl ml-auto mb-5 lg:hidden" @click="$emit('close')">
         <FontAwesome :icon="['fas', 'times']" />
       </div>
@@ -18,6 +18,7 @@
           <span @click="$emit('close')">{{ item.label }}</span>
         </g-link>
         <div
+          v-if="item.submenus"
           :class="[
             'flex flex-col ml-3 lg:hidden lg:group-hover:flex lg:rounded lg:ml-0 lg:p-3 lg:absolute',
             isSticky ? 'bg-white text-grey-dark' : 'bg-dark text-white',

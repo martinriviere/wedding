@@ -64,7 +64,7 @@ export default Vue.extend({
 
 <style>
 #logo {
-  width: 125px;
+  width: 85px;
 }
 @media screen and (max-width: 639px) {
   #logo {

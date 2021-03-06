@@ -1,7 +1,7 @@
-import 'fontsource-libre-baskerville'
-import 'fontsource-mr-de-haviland'
-import 'fontsource-arapey'
-import 'fontsource-roboto'
+import '@fontsource/libre-baskerville'
+import '@fontsource/mr-de-haviland'
+import '@fontsource/arapey'
+import "@fontsource/pt-sans"
 
 import Vuex from 'vuex'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
