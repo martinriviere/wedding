@@ -1,5 +1,6 @@
 <template>
-  <div class="w-full">
+   <div class="w-full relative">
+    <BackButton :link="backButtonLink" />
     <div class="container mx-auto flex flex-col items-center">
       <slot />
     </div>
@@ -8,14 +9,15 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import ListTile from '../components/ListTile.vue'
+import BackButton from '../components/BackButton.vue'
 
 export default Vue.extend({
   components: {
-    ListTile,
+    BackButton,
   },
   props: {
     data: Array,
+    backButtonLink: String,
   },
 })
 </script>

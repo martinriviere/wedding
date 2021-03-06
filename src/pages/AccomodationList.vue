@@ -1,5 +1,5 @@
 <template>
-  <List>
+  <List backButtonLink="/accomodation">
     <ListTile
       v-for="place in $page.accomodation.edges.map((e) => e.node)"
       :key="place.id"

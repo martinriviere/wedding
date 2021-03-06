@@ -6,7 +6,7 @@ import 'fontsource-roboto'
 import Vuex from 'vuex'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { config, library } from '@fortawesome/fontawesome-svg-core'
-import { faBars, faTimes, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes, faPhone, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import 'leaflet/dist/leaflet.css'
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
@@ -22,7 +22,7 @@ import GridCard from './components/GridCard.vue'
 import List from './components/List.vue'
 import ListTile from './components/ListTile.vue'
 
-library.add(faBars, faTimes, faPhone)
+library.add(faBars, faTimes, faPhone, faChevronLeft)
 
 config.autoAddCss = false
 

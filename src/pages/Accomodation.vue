@@ -8,7 +8,7 @@
         Nous vous avons concocté une liste de logements aux alentours du domaine.
       </h3>
     </div>
-    <div class="bg-white py-1 md:py-3">
+    <div class="py-1 md:py-3">
       <Grid>
         <GridCard
           v-for="place in $page.accomodation.edges.map((e) => e.node)"
