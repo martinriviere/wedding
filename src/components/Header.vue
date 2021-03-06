@@ -2,7 +2,7 @@
   <div
     ref="header"
     :class="[
-      'flex items-center justify-between px-4 py-2 sm:px-10 sticky top-0 transition-colors duration-500 ease-in-out z-50',
+      'flex items-center justify-between px-4 py-2 sm:px-10 sticky top-0 transition-colors duration-500 ease-in-out z-2000',
       isSticky ? 'bg-white shadow' : 'bg-dark',
     ]"
   >
