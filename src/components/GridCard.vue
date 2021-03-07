@@ -6,7 +6,7 @@
     >
       <slot />
     </div>
-    <g-link :to="`${$route.path}-list#${id}`" class="absolute inset-0 md:hidden" />
+    <g-link :to="`${$route.path.replace(/\/$/, '')}-list#${id}`" class="absolute inset-0 md:hidden" />
   </div>
 </template>
 
