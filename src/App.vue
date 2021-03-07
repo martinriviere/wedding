@@ -44,10 +44,12 @@ export default Vue.extend({
   },
   mounted() {
     if (!auth || !db) return
-    auth.onAuthStateChanged(async (user) => {
+    auth.onAuthStateChanged((user) => {
+      if (!db) return
       if (!user) return this.$store.commit('setUser', null)
-      const res = await db!.collection('users').doc(user.uid).get()
-      this.$store.commit('setUser', { email: user.email, id: user.uid, ...res?.data() })
+      db.collection('users').doc(user.uid).onSnapshot((doc) => {
+        this.$store.commit('setUser', { email: user.email, id: user.uid, ...doc.data() })
+      })
     })
   },
 })
