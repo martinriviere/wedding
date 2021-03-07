@@ -19,6 +19,11 @@ import { auth, db } from './config/firebase'
 
 export default Vue.extend({
   components: { Header, Footer },
+  data() {
+    return {
+      unsubscribe: () => {}
+    }
+  },
   computed: {
     user() {
       return this.$store.state.user
@@ -34,7 +39,6 @@ export default Vue.extend({
     user(val) {
       // @ts-ignore
       const { path } = this.$route
-      // @ts-ignore
       if (path === '/' && !val) return
       // @ts-ignore
       if (path !== '/' && !val) return this.$router.replace('/')
@@ -46,12 +50,18 @@ export default Vue.extend({
     if (!auth || !db) return
     auth.onAuthStateChanged((user) => {
       if (!db) return
-      if (!user) return this.$store.commit('setUser', null)
-      db.collection('users').doc(user.uid).onSnapshot((doc) => {
+      if (!user) {
+        this.unsubscribe()
+        return this.$store.commit('setUser', null)
+      }
+      this.unsubscribe = db.collection('users').doc(user.uid).onSnapshot((doc) => {
         this.$store.commit('setUser', { email: user.email, id: user.uid, ...doc.data() })
       })
     })
   },
+  beforeDestroy() {
+    this.unsubscribe()
+  }
 })
 </script>
 

@@ -67,7 +67,7 @@ export default Vue.extend({
         this.$router.replace('/home')
       } catch (e) {
         this.loading = false
-        if (['auth/user-not-found', 'auth/wrong-password'].includes(e.code))
+        if (['auth/user-not-found', 'auth/wrong-password', 'auth/invalid-email'].includes(e.code))
           this.error = "Nom d'utilisateur ou mot de passe incorrect"
       }
     },

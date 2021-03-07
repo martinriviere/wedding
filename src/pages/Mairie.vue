@@ -20,7 +20,7 @@
     <div class="relative">
       <div class="absolute inset-0 background-flower flower bg-50% sm:bg-30% bg-no-repeat opacity-50" />
       <div class="container mx-auto flex flex-col sm:flex-row items-center">
-        <div class="flex flex-col items-center text-center p-5 sm:w-1/2">
+        <div class="flex flex-col items-center text-center p-5 sm:w-1/2 relative">
           <SectionTitle class="mb-2 sm:mb-5">
             Programme de la journée
           </SectionTitle>
