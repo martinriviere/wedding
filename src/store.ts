@@ -12,6 +12,7 @@ interface User {
   dinner: boolean
   brunch: boolean
   diet: string
+  admin?: boolean
 }
 
 interface State {

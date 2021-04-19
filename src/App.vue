@@ -34,6 +34,9 @@ export default Vue.extend({
     mairie() {
       return this.$store.state.user?.mairie
     },
+    admin() {
+      return this.$store.state.user?.admin
+    },
   },
   watch: {
     user(val) {
@@ -44,6 +47,8 @@ export default Vue.extend({
       if (path !== '/' && !val) return this.$router.replace('/')
       // @ts-ignore
       if (path === '/' || (path ==='/mairie' && !this.mairie)) this.$router.replace('/home')
+      // @ts-ignore
+      if (path === '/' || (path ==='/stats' && !this.admin)) this.$router.replace('/home')
     },
   },
   mounted() {
