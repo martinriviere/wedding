@@ -18,23 +18,13 @@
   </ClientOnly>
 </template>
 
-<script lang="ts">
-import Vue, { PropType } from 'vue'
-import { Marker } from '../utils/latLng'
+<script>
+let Icon
 
-// @ts-ignore
-const isClient = process.isClient
-let Icon: { new(arg0: { iconRetinaUrl: any; iconUrl: any; iconSize: number[] }): any; Default: { prototype: any; mergeOptions: (arg0: { iconRetinaUrl: any; iconUrl: any; iconSize: number[]; shadowUrl: null }) => void } }
-
-if (isClient) {
+if (process.isClient) {
   Icon = require('leaflet').Icon
 
-  // @ts-ignore
-  type D = Icon.Default & {
-    _getIconUrl?: string
-  }
-
-  delete (Icon.Default.prototype as D)._getIconUrl
+  delete Icon.Default.prototype._getIconUrl
   Icon.Default.mergeOptions({
     iconRetinaUrl: require('../assets/img/map/blue-icon-2x.png'),
     iconUrl: require('../assets/img/map/blue-icon.png'),
@@ -43,7 +33,7 @@ if (isClient) {
   })
 }
 
-export default Vue.extend({
+export default {
   components: {
     LMap: () => import('vue2-leaflet').then((m) => m.LMap),
     LTileLayer: () => import('vue2-leaflet').then((m) => m.LTileLayer),
@@ -52,8 +42,8 @@ export default Vue.extend({
   },
   props: {
     center: Object,
-    importantPlaces: Array as PropType<Marker[]>,
-    markers: Array as PropType<Marker[]>,
+    importantPlaces: Array,
+    markers: Array,
     zoom: { type: Number, default: 10 },
   },
   data() {
@@ -80,7 +70,7 @@ export default Vue.extend({
       }),
     }
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

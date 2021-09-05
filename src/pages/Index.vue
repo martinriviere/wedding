@@ -2,7 +2,9 @@
   <div class="background-fern bg-cover">
     <div class="container h-screen mx-auto flex flex-col justify-center items-center">
       <g-image src="../assets/img/logo.png" id="logo" alt="Logo" class="mb-16" width="500" />
-      <CountDown class="text-xl sm:text-4xl text-gray-400 font-baskerville" />
+      <p class="text-xl sm:text-4xl text-gray-400 font-baskerville">
+        Les photos sont arrivées !
+      </p>
       <form @submit.prevent="login" class="flex flex-col my-4">
         <input
           type="text"
@@ -28,12 +30,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import CountDown from '../components/CountDown.vue'
 import { auth } from '../config/firebase'
 
-export default Vue.extend({
+export default {
   components: { CountDown },
   data() {
     return {
@@ -45,7 +46,6 @@ export default Vue.extend({
   },
   computed: {
     disabled() {
-      // @ts-ignore
       return !this.email || !this.password
     },
   },
@@ -63,7 +63,6 @@ export default Vue.extend({
       try {
         this.loading = true
         await auth.signInWithEmailAndPassword(`${this.email}@manonetmartin.fr`, `pass${this.password}word`)
-        // @ts-ignore
         this.$router.replace('/home')
       } catch (e) {
         this.loading = false
@@ -72,7 +71,7 @@ export default Vue.extend({
       }
     },
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

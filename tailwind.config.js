@@ -3,7 +3,9 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: [
+    "./src/**/*.vue",
+  ],
   theme: {
     extend: {
       colors: {
@@ -30,12 +32,16 @@ module.exports = {
       },
       zIndex: {
         2000: 2000
+      },
+      transitionProperty: {
+        spacing: 'margin, padding',
       }
     },
   },
   variants: {
     extend: {
       display: ['hover', 'focus', 'group-hover'],
+      visibility: ['hover', 'group-hover'],
     },
   },
   plugins: [],

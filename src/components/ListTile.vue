@@ -7,13 +7,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
+<script>
+export default {
   props: {
     picture: Object,
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

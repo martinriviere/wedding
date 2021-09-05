@@ -12,14 +12,13 @@
   </button>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
+<script>
+export default {
   props: {
     label: String,
     loading: Boolean,
     disabled: Boolean,
     buttonClass: String,
   },
-})
+}
 </script>

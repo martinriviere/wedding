@@ -33,11 +33,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import InfoCard from '../components/infos/InfoCard.vue'
 
-export default Vue.extend({
+export default {
   components: {
     InfoCard,
   },
@@ -74,5 +73,5 @@ export default Vue.extend({
       ],
     }
   },
-})
+}
 </script>

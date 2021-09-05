@@ -11,13 +11,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import { auth, db } from './config/firebase'
 
-export default Vue.extend({
+export default {
   components: { Header, Footer },
   data() {
     return {
@@ -37,12 +36,9 @@ export default Vue.extend({
   },
   watch: {
     user(val) {
-      // @ts-ignore
       const { path } = this.$route
       if (path === '/' && !val) return
-      // @ts-ignore
       if (path !== '/' && !val) return this.$router.replace('/')
-      // @ts-ignore
       if (path === '/' || (path ==='/mairie' && !this.mairie)) this.$router.replace('/home')
     },
   },
@@ -62,7 +58,7 @@ export default Vue.extend({
   beforeDestroy() {
     this.unsubscribe()
   }
-})
+}
 </script>
 
 <style lang="scss">

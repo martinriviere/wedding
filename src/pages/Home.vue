@@ -61,12 +61,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import Map from '../components/Map.vue'
 import { generateMarker } from '../utils/latLng'
 
-export default Vue.extend({
+export default {
   components: {
     Map,
   },
@@ -84,7 +83,7 @@ export default Vue.extend({
       ],
     }
   },
-})
+}
 </script>
 
 <style lang="scss" scoped>

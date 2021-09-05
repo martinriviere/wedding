@@ -18,9 +18,6 @@ module.exports = {
   },
   plugins: [
     {
-      use: `gridsome-plugin-typescript`,
-    },
-    {
       use: `gridsome-plugin-tailwindcss`,
       /**
       * These are the default options. You don't need to set any options to get
@@ -53,6 +50,27 @@ module.exports = {
       options: {
         path: "content/team/*.md",
         typeName: "Team",
+      },
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "src/assets/img/photos/photobooth",
+        typeName: "Photobooth",
+      },
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "src/assets/img/photos/mairie",
+        typeName: "Mairie",
+      },
+    },
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        path: "src/assets/img/photos/audrey",
+        typeName: "Audrey",
       },
     },
   ],

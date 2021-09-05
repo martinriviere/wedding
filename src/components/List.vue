@@ -7,11 +7,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import BackButton from '../components/BackButton.vue'
 
-export default Vue.extend({
+export default {
   components: {
     BackButton,
   },
@@ -19,5 +18,5 @@ export default Vue.extend({
     data: Array,
     backButtonLink: String,
   },
-})
+}
 </script>

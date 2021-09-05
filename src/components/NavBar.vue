@@ -2,25 +2,25 @@
   <div
     :class="[
       mobileVisible ? 'right-0' : '-right-full',
-      'bg-dark lg:bg-transparent fixed lg:static top-0 bottom-0 transition-all duration-500 ease-out z-50',
+      'bg-dark md:bg-transparent fixed md:static top-0 bottom-0 transition-all duration-500 ease-out z-50',
     ]"
   >
-    <div class="flex flex-col lg:flex-row lg:items-center px-4 py-2">
-      <div class="text-white text-3xl ml-auto mb-5 lg:hidden" @click="$emit('close')">
-        <FontAwesome :icon="['fas', 'times']" />
+    <div class="flex flex-col md:flex-row md:items-center px-4 py-2">
+      <div class="text-white text-3xl ml-auto mb-5 md:hidden" @click="$emit('close')">
+        <FontAwesome :icon="['fal', 'times']" />
       </div>
       <div
         v-for="item in filteredPages"
         :key="item.label"
-        :class="['group my-1 lg:my-0 lg:mr-5', isSticky ? 'text-grey-dark' : 'text-white']"
+        :class="['group my-1 md:my-0 md:mr-5', isSticky ? 'text-grey-dark' : 'text-white']"
       >
-        <g-link :to="item.link" class="text-xl lg:text-base" active-class="text-grey-light">
+        <g-link :to="item.link" class="text-xl md:text-base" active-class="text-grey-light">
           <span @click="$emit('close')">{{ item.label }}</span>
         </g-link>
         <div
           v-if="item.submenus"
           :class="[
-            'flex flex-col ml-3 lg:hidden lg:group-hover:flex lg:rounded lg:ml-0 lg:p-3 lg:absolute',
+            'flex flex-col ml-3 md:hidden md:group-hover:flex md:rounded md:ml-0 md:p-3 md:absolute',
             isSticky ? 'bg-white text-grey-dark' : 'bg-dark text-white',
           ]"
         >
@@ -28,22 +28,21 @@
             v-for="sub in item.submenus"
             :to="sub.link"
             :key="sub.label"
-            class="my-1 lg:my-0 lg:mr-5 lg:text-base"
+            class="my-1 md:my-0 md:mr-5 md:text-base"
             active-class="text-grey-light"
           >
             <span @click="$emit('close')">{{ sub.label }}</span>
           </g-link>
         </div>
       </div>
-      <span class="my-1 lg:my-0 lg:mr-5 text-white text-xl lg:text-base cursor-pointer" @click="logOut"
+      <span class="my-1 md:my-0 md:mr-5 text-white text-xl md:text-base cursor-pointer" @click="logOut"
         >Déconnexion</span
       >
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import { auth } from '../config/firebase'
 
 const pages = [
@@ -82,9 +81,13 @@ const pages = [
     link: '/mairie',
     protected: 'mairie',
   },
+  {
+    label: 'Photos',
+    link: '/photos',
+  }
 ]
 
-export default Vue.extend({
+export default {
   components: {},
   props: {
     mobileVisible: Boolean,
@@ -93,7 +96,6 @@ export default Vue.extend({
   computed: {
     filteredPages() {
       return pages.filter(
-        // @ts-ignore
         (page) => !page.protected || (this.$store.state.user && this.$store.state.user[page.protected]),
       )
     },
@@ -104,5 +106,5 @@ export default Vue.extend({
       auth.signOut()
     },
   },
-})
+}
 </script>

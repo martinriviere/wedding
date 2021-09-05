@@ -10,16 +10,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from "vue"
-export default Vue.extend({
+<script>
+import { imageLoader } from '../../utils/imageLoader'
+
+export default {
   props: {
     info: Object,
   },
   computed: {
     getImage() {
-      return require(`!!assets-loader!@images/${this.info.img}`)
+      return imageLoader(this.info.img)
     },
   },
-})
+}
 </script>

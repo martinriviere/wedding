@@ -6,10 +6,12 @@ import "@fontsource/pt-sans"
 import Vuex from 'vuex'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { config, library } from '@fortawesome/fontawesome-svg-core'
-import { faBars, faTimes, faPhone, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faPhone, faChevronLeft, faCheckCircle, faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
+import { faCircle, faSave, faTimes } from '@fortawesome/pro-light-svg-icons'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import 'leaflet/dist/leaflet.css'
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+import ClipLoader from 'vue-spinner/src/ClipLoader.vue'
 
 import store from './store'
 
@@ -22,7 +24,7 @@ import GridCard from './components/GridCard.vue'
 import List from './components/List.vue'
 import ListTile from './components/ListTile.vue'
 
-library.add(faBars, faTimes, faPhone, faChevronLeft)
+library.add(faBars, faTimes, faPhone, faChevronLeft, faSave, faCheckCircle, faChevronCircleLeft, faChevronCircleRight, faCircle)
 
 config.autoAddCss = false
 
@@ -37,6 +39,7 @@ export default function(Vue, { router, appOptions, head, isClient }) {
   Vue.component('SectionTitle', SectionTitle)
   Vue.component('FormButton', FormButton)
   Vue.component('Loader', PulseLoader)
+  Vue.component('ClipLoader', ClipLoader)
   Vue.component('Grid', Grid)
   Vue.component('GridCard', GridCard)
   Vue.component('List', List)

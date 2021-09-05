@@ -63,12 +63,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import FormButton from '../components/FormButton.vue'
 import { deleteField } from '../config/firebase'
 
-export default Vue.extend({
+export default {
   components: { FormButton },
   data() {
     const { attends, adults, children, dinner, brunch, diet } = this.$store.state.user
@@ -92,11 +91,9 @@ export default Vue.extend({
       return this.$store.getters.userRef
     },
     disabled() {
-      // @ts-ignore
       return typeof this.attends === 'undefined'
     },
     alone() {
-      // @ts-ignore
       return this.adults + this.children === 1
     },
   },
@@ -121,14 +118,13 @@ export default Vue.extend({
         this.underEdit = false
         this.pending = false
       } catch (e) {
-        console.log(e)
         this.error = true
         this.pending = false
       }
     },
-    removeIfNeeded(field: any) {
+    removeIfNeeded(field) {
       return this.attends ? field : deleteField()
     },
   },
-})
+}
 </script>

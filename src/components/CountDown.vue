@@ -2,8 +2,7 @@
   <div>{{ countdown }}</div>
 </template>
 
-<script lang="ts">
-import Vue from "vue"
+<script>
 import * as countdown from "countdown"
 
 countdown.setLabels(
@@ -14,7 +13,7 @@ countdown.setLabels(
   "maintenant"
 )
 
-export default Vue.extend({
+export default {
   data: () => ({
     date: Date.now(),
     interval: setInterval(() => {}, 0),
@@ -38,5 +37,5 @@ export default Vue.extend({
   beforeDestroy() {
     clearInterval(this.interval)
   },
-})
+}
 </script>

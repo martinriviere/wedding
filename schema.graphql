@@ -20,6 +20,67 @@ interface NodeConnectionEdge {
     previous: Node
 }
 
+type Accomodation implements Node {
+    belongsTo(
+        filter: BelongsToFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument!],
+        sortBy: String = "date"
+    ): NodeBelongsTo
+    content: String
+    excerpt(
+        "Maximum length of generated excerpt (characters)"
+        length: Int = 200
+    ): String
+    fileInfo: Accomodation_FileInfo
+    headings(depth: RemarkHeadingLevels, stripTags: Boolean = true): [RemarkHeading]
+    id: ID!
+    path(to: String = "default"): String
+    picture(
+        "Background color for 'contain'"
+        background: String,
+        "Blur level for base64 string"
+        blur: Int,
+        "Fit"
+        fit: ImageFit = cover,
+        "Height"
+        height: Int,
+        "Quality (default: 75)"
+        quality: Int,
+        "Width"
+        width: Int
+    ): Image
+    timeToRead(
+        "Words per minute"
+        speed: Int = 230
+    ): Int
+    title: String
+}
+
+type AccomodationConnection implements NodeConnection {
+    edges: [AccomodationEdge]
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type AccomodationEdge implements NodeConnectionEdge {
+    next: Accomodation
+    node: Accomodation
+    previous: Accomodation
+}
+
+type Accomodation_FileInfo {
+    directory: String
+    extension: String
+    name: String
+    path: String
+}
+
 type Activity implements Node {
     belongsTo(
         filter: BelongsToFilterInput,
@@ -81,6 +142,84 @@ type Activity_FileInfo {
     path: String
 }
 
+type Audrey implements Node {
+    belongsTo(
+        filter: BelongsToFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument!],
+        sortBy: String = "date"
+    ): NodeBelongsTo
+    content: String
+    extension: String
+    fileInfo: Audrey_FileInfo
+    id: ID!
+    name: String
+    path(to: String = "default"): String
+}
+
+type AudreyConnection implements NodeConnection {
+    edges: [AudreyEdge]
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type AudreyEdge implements NodeConnectionEdge {
+    next: Audrey
+    node: Audrey
+    previous: Audrey
+}
+
+type Audrey_FileInfo {
+    directory: String
+    extension: String
+    name: String
+    path: String
+}
+
+type Mairie implements Node {
+    belongsTo(
+        filter: BelongsToFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument!],
+        sortBy: String = "date"
+    ): NodeBelongsTo
+    content: String
+    extension: String
+    fileInfo: Mairie_FileInfo
+    id: ID!
+    name: String
+    path(to: String = "default"): String
+}
+
+type MairieConnection implements NodeConnection {
+    edges: [MairieEdge]
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type MairieEdge implements NodeConnectionEdge {
+    next: Mairie
+    node: Mairie
+    previous: Mairie
+}
+
+type Mairie_FileInfo {
+    directory: String
+    extension: String
+    name: String
+    path: String
+}
+
 type Metadata {
     pathPrefix: String
     siteDescription: String
@@ -116,13 +255,70 @@ type PageInfo {
     totalPages: Int!
 }
 
+type Photobooth implements Node {
+    belongsTo(
+        filter: BelongsToFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument!],
+        sortBy: String = "date"
+    ): NodeBelongsTo
+    content: String
+    extension: String
+    fileInfo: Photobooth_FileInfo
+    id: ID!
+    name: String
+    path(to: String = "default"): String
+}
+
+type PhotoboothConnection implements NodeConnection {
+    edges: [PhotoboothEdge]
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type PhotoboothEdge implements NodeConnectionEdge {
+    next: Photobooth
+    node: Photobooth
+    previous: Photobooth
+}
+
+type Photobooth_FileInfo {
+    directory: String
+    extension: String
+    name: String
+    path: String
+}
+
 type Query {
+    accomodation(
+        id: ID,
+        "Will return an error if not nullable."
+        nullable: Boolean = false,
+        path: String
+    ): Accomodation
     activity(
         id: ID,
         "Will return an error if not nullable."
         nullable: Boolean = false,
         path: String
     ): Activity
+    allAccomodation(
+        "Filter for Accomodation nodes."
+        filter: AccomodationFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument],
+        sortBy: String = "date"
+    ): AccomodationConnection
     allActivity(
         "Filter for Activity nodes."
         filter: ActivityFilterInput,
@@ -135,19 +331,154 @@ type Query {
         sort: [SortArgument],
         sortBy: String = "date"
     ): ActivityConnection
+    allAudrey(
+        "Filter for Audrey nodes."
+        filter: AudreyFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument],
+        sortBy: String = "date"
+    ): AudreyConnection
+    allMairie(
+        "Filter for Mairie nodes."
+        filter: MairieFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument],
+        sortBy: String = "date"
+    ): MairieConnection
     allPage(
         "Filter pages."
         filter: PageFilterInput
     ): [Page]
+    allPhotobooth(
+        "Filter for Photobooth nodes."
+        filter: PhotoboothFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument],
+        sortBy: String = "date"
+    ): PhotoboothConnection
+    allTeam(
+        "Filter for Team nodes."
+        filter: TeamFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument],
+        sortBy: String = "date"
+    ): TeamConnection
+    audrey(
+        id: ID,
+        "Will return an error if not nullable."
+        nullable: Boolean = false,
+        path: String
+    ): Audrey
+    mairie(
+        id: ID,
+        "Will return an error if not nullable."
+        nullable: Boolean = false,
+        path: String
+    ): Mairie
     metaData: Metadata @deprecated(reason : "Use Query.metadata instead.")
     metadata: Metadata
     page(path: String!): Page
+    photobooth(
+        id: ID,
+        "Will return an error if not nullable."
+        nullable: Boolean = false,
+        path: String
+    ): Photobooth
+    team(
+        id: ID,
+        "Will return an error if not nullable."
+        nullable: Boolean = false,
+        path: String
+    ): Team
 }
 
 type RemarkHeading {
     anchor: String
     depth: Int
     value: String
+}
+
+type Team implements Node {
+    belongsTo(
+        filter: BelongsToFilterInput,
+        limit: Int,
+        order: SortOrder = DESC,
+        page: Int,
+        "Defaults to 25 when page is provided."
+        perPage: Int,
+        skip: Int = 0,
+        sort: [SortArgument!],
+        sortBy: String = "date"
+    ): NodeBelongsTo
+    content: String
+    excerpt(
+        "Maximum length of generated excerpt (characters)"
+        length: Int = 200
+    ): String
+    fileInfo: Team_FileInfo
+    headings(depth: RemarkHeadingLevels, stripTags: Boolean = true): [RemarkHeading]
+    id: ID!
+    mail: String
+    name: String
+    path(to: String = "default"): String
+    picture(
+        "Background color for 'contain'"
+        background: String,
+        "Blur level for base64 string"
+        blur: Int,
+        "Fit"
+        fit: ImageFit = cover,
+        "Height"
+        height: Int,
+        "Quality (default: 75)"
+        quality: Int,
+        "Width"
+        width: Int
+    ): Image
+    telephone: String
+    timeToRead(
+        "Words per minute"
+        speed: Int = 230
+    ): Int
+}
+
+type TeamConnection implements NodeConnection {
+    edges: [TeamEdge]
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type TeamEdge implements NodeConnectionEdge {
+    next: Team
+    node: Team
+    previous: Team
+}
+
+type Team_FileInfo {
+    directory: String
+    extension: String
+    name: String
+    path: String
 }
 
 enum ImageFit {
@@ -180,7 +511,29 @@ enum SortOrder {
 }
 
 enum TypeName {
+    Accomodation
     Activity
+    Audrey
+    Mairie
+    Photobooth
+    Team
+}
+
+input AccomodationFilterInput {
+    content: StringQueryOperatorInput
+    excerpt: StringQueryOperatorInput
+    fileInfo: Accomodation_FileInfoFilterInput
+    id: IDQueryOperatorInput
+    path: StringQueryOperatorInput
+    picture: ImageQueryOperatorInput
+    title: StringQueryOperatorInput
+}
+
+input Accomodation_FileInfoFilterInput {
+    directory: StringQueryOperatorInput
+    extension: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    path: StringQueryOperatorInput
 }
 
 input ActivityFilterInput {
@@ -194,6 +547,20 @@ input ActivityFilterInput {
 }
 
 input Activity_FileInfoFilterInput {
+    directory: StringQueryOperatorInput
+    extension: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    path: StringQueryOperatorInput
+}
+
+input AudreyFilterInput {
+    content: StringQueryOperatorInput
+    fileInfo: Audrey_FileInfoFilterInput
+    id: IDQueryOperatorInput
+    path: StringQueryOperatorInput
+}
+
+input Audrey_FileInfoFilterInput {
     directory: StringQueryOperatorInput
     extension: StringQueryOperatorInput
     name: StringQueryOperatorInput
@@ -249,8 +616,36 @@ input JSONQueryOperatorInput {
     regex: String
 }
 
+input MairieFilterInput {
+    content: StringQueryOperatorInput
+    fileInfo: Mairie_FileInfoFilterInput
+    id: IDQueryOperatorInput
+    path: StringQueryOperatorInput
+}
+
+input Mairie_FileInfoFilterInput {
+    directory: StringQueryOperatorInput
+    extension: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    path: StringQueryOperatorInput
+}
+
 input PageFilterInput {
     context: JSONQueryOperatorInput
+    path: StringQueryOperatorInput
+}
+
+input PhotoboothFilterInput {
+    content: StringQueryOperatorInput
+    fileInfo: Photobooth_FileInfoFilterInput
+    id: IDQueryOperatorInput
+    path: StringQueryOperatorInput
+}
+
+input Photobooth_FileInfoFilterInput {
+    directory: StringQueryOperatorInput
+    extension: StringQueryOperatorInput
+    name: StringQueryOperatorInput
     path: StringQueryOperatorInput
 }
 
@@ -272,6 +667,25 @@ input StringQueryOperatorInput {
     nin: [String]
     "Filter by property matching provided regular expression."
     regex: String
+}
+
+input TeamFilterInput {
+    content: StringQueryOperatorInput
+    excerpt: StringQueryOperatorInput
+    fileInfo: Team_FileInfoFilterInput
+    id: IDQueryOperatorInput
+    mail: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    path: StringQueryOperatorInput
+    picture: ImageQueryOperatorInput
+    telephone: StringQueryOperatorInput
+}
+
+input Team_FileInfoFilterInput {
+    directory: StringQueryOperatorInput
+    extension: StringQueryOperatorInput
+    name: StringQueryOperatorInput
+    path: StringQueryOperatorInput
 }
 
 input TypeNameQueryOperatorInput {
